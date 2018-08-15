@@ -72,11 +72,12 @@ namespace MUERP.Controllers
 
         public ActionResult Test2()
         {
-            //var sql = string.Format("select top 10 * from wxpaylife");
-            //var table = DbHelperSQL.Query(sql).Tables[0];
-            var list = DBUtils<wxpaylife>.SelectListPagination("wxpaylife", 1, 10);
+            var sql = string.Format("select top 10 * from wxpaylife");
+            var table = DbHelperSQL.Query(sql).Tables[0];
+            var list = DBUtils<wxpaylife>.Data2Entity(table);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(list);
 
-            return Json(list, JsonRequestBehavior.AllowGet);
+            return Content(json, "text/json");
         }
     }
 }

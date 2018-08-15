@@ -16,7 +16,8 @@ public class DBUtils<T>
 
         for (int row = 0; row < dt.Rows.Count; row++)
         {
-            T t = Activator.CreateInstance<T>();
+            //T t = Activator.CreateInstance<T>();
+            T t = default(T);
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 PropertyInfo info = plist.Find(p => p.Name.ToLower() == dt.Columns[i].ColumnName.ToLower());
@@ -77,6 +78,28 @@ public class DBUtils<T>
         return list;
     }
 
+    public static List<T> Data2Entity(DataTable dt)
+    {
+        List<T> list = new List<T>( );
+        PropertyInfo[] ps = typeof(T).GetProperties( );
+        foreach (DataRow r in dt.Rows)
+        {
+            T t = default(T);
+            t = Activator.CreateInstance<T>( );
+            foreach (var item in ps)
+            {
+                if (r.Table.Columns.Contains(item.Name))
+                {
+                    object v = r[item.Name];
+                    if (v.GetType( ) == typeof(System.DBNull)) v = null;
+                    item.SetValue(t, v, null);
+                }
+            }
+            list.Add(t);
+        }
+        return list;
+    }
+
     public static PageList<T> DataToPageList(DataTable dt, int page = 1, int size = 10)
     {
         PageList<T> pagelist = new PageList<T>();
@@ -120,8 +143,14 @@ public class DBUtils<T>
                                 case "String":
                                     info.SetValue(t, Convert.ToString(obj), null);
                                     break;
+                                case "Int16":
+                                    info.SetValue(t, Convert.ToInt16(obj), null);
+                                    break;
                                 case "Int32":
                                     info.SetValue(t, Convert.ToInt32(obj), null);
+                                    break;
+                                case "Int64":
+                                    info.SetValue(t, Convert.ToInt64(obj), null);
                                     break;
                                 case "Double":
                                     info.SetValue(t, Convert.ToDouble(obj), null);
@@ -132,8 +161,20 @@ public class DBUtils<T>
                                 case "DateTime":
                                     info.SetValue(t, Convert.ToDateTime(obj), null);
                                     break;
-                                case "Int64":
-                                    info.SetValue(t, Convert.ToInt64(obj), null);
+                                case "Boolean":
+                                    info.SetValue(t, Convert.ToBoolean(obj), null);
+                                    break;
+                                case "Byte":
+                                    info.SetValue(t, Convert.ToByte(obj), null);
+                                    break;
+                                case "SByte":
+                                    info.SetValue(t, Convert.ToSByte(obj), null);
+                                    break;
+                                case "Char":
+                                    info.SetValue(t, Convert.ToChar(obj), null);
+                                    break;
+                                case "Single":
+                                    info.SetValue(t, Convert.ToSingle(obj), null);
                                     break;
                                 default:
                                     info.SetValue(t, obj, null);
