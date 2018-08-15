@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +183,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MUSystem.Core\MUSystem.Core.csproj">
+      <Project>{DB6BCC67-5FE1-432D-B40C-4B96DF24ABFA}</Project>
+      <Name>MUSystem.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MUSystem.DBModel\MUSystem.DBModel.csproj">
+      <Project>{D0112F9D-61D1-4D50-A5ED-9A34AAE9B844}</Project>
+      <Name>MUSystem.DBModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MUSystem.DBWapper\MUSystem.DBWapper.csproj">
+      <Project>{9f602b1e-0a48-4ac6-a39c-ef0be1b64b38}</Project>
+      <Name>MUSystem.DBWapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
