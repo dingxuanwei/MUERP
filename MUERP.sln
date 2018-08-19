@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MUSystem.DBWapper", "MUSyst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MUSystem.DBModel", "MUSystem.DBModel\MUSystem.DBModel.csproj", "{D0112F9D-61D1-4D50-A5ED-9A34AAE9B844}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MU.Extensions", "MU.Extensions\MU.Extensions.csproj", "{5F84A21D-5E35-4010-9723-056EA8F1FF06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D0112F9D-61D1-4D50-A5ED-9A34AAE9B844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0112F9D-61D1-4D50-A5ED-9A34AAE9B844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0112F9D-61D1-4D50-A5ED-9A34AAE9B844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F84A21D-5E35-4010-9723-056EA8F1FF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F84A21D-5E35-4010-9723-056EA8F1FF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F84A21D-5E35-4010-9723-056EA8F1FF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F84A21D-5E35-4010-9723-056EA8F1FF06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
