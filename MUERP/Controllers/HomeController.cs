@@ -79,5 +79,35 @@ namespace MUERP.Controllers
 
             return Content(json, "text/json");
         }
+
+        public ActionResult Order( )
+        {
+            var data = new DataGrid<Employee>( );
+            data.page = 1;
+            data.size = 10;
+            data.total = 125;
+            data.rows = new List<Employee>( ) { new Employee("dingxw", 33), new Employee("dingxuanwei", 30) };
+            return View(data);
+        }
+    }
+
+    public class DataGrid<Entity>
+    {
+        public IEnumerable<Entity> rows { get; set; }
+        public int total { get; set; }
+        public int page { get; set; }
+        public int size { get; set; }
+    }
+
+    public class Employee
+    {
+        public string name { get; set; }
+        public int age { get; set; }
+        public Employee( ) { }
+        public Employee(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
     }
 }
