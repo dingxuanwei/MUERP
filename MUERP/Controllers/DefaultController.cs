@@ -45,5 +45,13 @@ namespace MUERP.Controllers
             var result = masterService.GetDynamicListWithPaging(pQuery);
             return result;
         }
+
+        public List<wxpaylife> Test2()
+        {
+            var sql = string.Format("select top 10 * from wxpaylife");
+            var table = DbHelperSQL.Query(sql).Tables[0];
+            var list = DBUtils<wxpaylife>.Data2Entity(table);
+            return list;
+        }
     }
 }
