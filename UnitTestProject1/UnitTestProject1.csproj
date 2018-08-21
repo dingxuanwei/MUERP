@@ -61,6 +61,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MU.Extensions\MU.Extensions.csproj">
+      <Project>{5f84a21d-5e35-4010-9723-056ea8f1ff06}</Project>
+      <Name>MU.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MUSystem.Core\MUSystem.Core.csproj">
       <Project>{DB6BCC67-5FE1-432D-B40C-4B96DF24ABFA}</Project>
       <Name>MUSystem.Core</Name>
