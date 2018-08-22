@@ -57,6 +57,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MUSystem.DBModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\MUSystem.DBModel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -140,7 +144,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,6 +199,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MU.Extensions\MU.Extensions.csproj">
+      <Project>{5f84a21d-5e35-4010-9723-056ea8f1ff06}</Project>
+      <Name>MU.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MUSystem.DBWapper\MUSystem.DBWapper.csproj">
       <Project>{9f602b1e-0a48-4ac6-a39c-ef0be1b64b38}</Project>
       <Name>MUSystem.DBWapper</Name>
