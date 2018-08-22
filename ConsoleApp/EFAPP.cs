@@ -15,14 +15,23 @@ namespace ConsoleApp
         {
         }
 
-        public virtual DbSet<TUsers> Users { get; set; }
-        public virtual DbSet<TRoles> Roles { get; set; }
-        public virtual DbSet<TUsersRoles> UsersRoles { get; set; }
+        public DbSet<Photograph> Photographs { get; set; }
+        public DbSet<PhotographFullImage> PhotographFullImages { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Photograph>( )
+                .HasRequired(p => p.PhotographFullImage)
+                .WithRequiredPrincipal(p => p.Photograph);
+            //modelBuilder.Entity<Photograph>( ).ToTable("Table1");
+            //modelBuilder.Entity<PhotographFullImage>( ).ToTable("Table2");
+        }
     }
 
     public class DB
     {
-        public static void Add<T>(T model) where T : class
+        public static void Insert<T>(T model) where T : class
         {
             try
             {
@@ -38,7 +47,7 @@ namespace ConsoleApp
             }
         }
 
-        public static void AddRange<T>(IEnumerable<T> nmodel) where T : class
+        public static void InsertList<T>(IEnumerable<T> nmodel) where T : class
         {
             try
             {
@@ -156,24 +165,5 @@ namespace ConsoleApp
                 Console.WriteLine(ex);
             }
         }
-    }
-
-    public class sys_company
-    {
-        public int Id { get; set; }
-        [StringLength(50)]
-        public string Name { get; set; }
-
-        public sys_company() { }
-        public sys_company(string name)
-        {
-            this.Name = name;
-        }
-    }
-
-    public class v_test
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
     }
 }

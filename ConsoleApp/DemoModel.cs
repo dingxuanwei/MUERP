@@ -1,36 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ConsoleApp
 {
-    public class TUsers
+    public class Photograph
     {
-        public int Id { get; set; }
-        public string Account { get; set; }
-        public string Password { get; set; }
-        public DateTime CreateDate { get; set; }
-        public bool? IsLogin { get; set; }
-
-        public virtual List<TUsersRoles> TUsersRolesList { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int PhotoId { get; set; }
+        public string Title { get; set; }
+        public byte[] ThumbnailBits { get; set; }
+        [ForeignKey("PhotoId")]
+        public virtual PhotographFullImage PhotographFullImage { get; set; }
     }
 
-    public class TRoles
+    public class PhotographFullImage
     {
-        public int Id { get; set; }
-
-        public string RoleName { get; set; }
-
-        public string RoleRemark { get; set; }
-
-        public virtual List<TUsersRoles> TRolesUsersList { get; set; }
-    }
-
-    public class TUsersRoles
-    {
-        public int Id { get; set; }
-
+        [Key]
+        public int PhotoId { get; set; }
+        public byte[] HighResolutionBits { get; set; }
+        [ForeignKey("PhotoId")]
+        public virtual Photograph Photograph { get; set; }
     }
 }
