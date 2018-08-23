@@ -11,18 +11,21 @@ namespace MU.Extensions
     {
         public static void Send(string emailAddress, string html)
         {
-            var frommail= "dingxuanwei@shtmu.com";
-            var password = "38158738a";
-             MailMessage mail = new MailMessage();
-            mail.Subject = "测试邮件";
-            mail.From = new MailAddress(frommail, "上海秒优");
-            mail.To.Add(new MailAddress(emailAddress, "noreply"));
+            string subject = "测试邮件";
+            string displayname = "上海秒优";
+            string frommail = "dingxuanwei@shtmu.com";
+            string password = "*******";
+            string host = "smtp.ym.163.com";
+            MailMessage mail = new MailMessage();
+            mail.Subject = subject;
+            mail.From = new MailAddress(frommail, displayname);
+            mail.To.Add(new MailAddress(emailAddress));
             mail.Body = html;
             mail.BodyEncoding = Encoding.UTF8;
             mail.IsBodyHtml = true;
             mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess;
             SmtpClient client = new SmtpClient();
-            client.Host = "smtp.ym.163.com";
+            client.Host = host;
             client.UseDefaultCredentials = false;
             client.Credentials = new System.Net.NetworkCredential(frommail, password);
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
