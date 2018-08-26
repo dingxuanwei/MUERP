@@ -1,24 +1,13 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.head-north {
+    overflow:hidden !important;
+    background:#2076C3 url(/Content/images/headbg.png) repeat-x;
+    line-height:42px;
+    color:#fff;
+    font-family:Verdana,微软雅黑，黑体;
 }
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.head-right {
+    float:right;
+    padding-right:10px;
 }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
+.head-left {background:url(/Content/images/logo/logo48.png) no-repeat left; margin-left:10px; width:310px; height:46px;float:left; padding-left:70px; font-size:24px; font-weight:bolder; font-family:'Microsoft YaHei' !important;}
+.footer{text-align:center;color:#15428B; margin:0px; padding:0px;line-height:23px; font-weight:bold;}
