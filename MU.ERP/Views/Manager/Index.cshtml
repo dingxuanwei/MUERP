@@ -2,7 +2,7 @@
 @{
     //ViewBag.Title = "Index";
 }
-<div class="easyui-tabs" fit="true" border="false">
+<div class="easyui-tabs" fit="true" border="false" tools="#tab-tools">
     <div title="我的桌面" style="padding:10px">
         <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
         <ul>
@@ -14,12 +14,18 @@
             <li>easyui is very easy but powerful.</li>
         </ul>
     </div>
-    <div title="My Documents" style="padding:10px">
+    <div title="样品订单" data-options="iconCls:'icon-edit',closable:true">
         
     </div>
-    <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+    <div title="客户订单" data-options="iconCls:'icon-help',closable:true">
         This is the help content.
     </div>
+</div>
+
+<div id="tab-tools" style="border-top:0;">
+    <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-arrow_refresh"></a>
+    <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-screen_full"></a>
+    <a href="#" class="easyui-linkbutton" plain="true" iconCls="panel-tool-close"></a>
 </div>
 
 @section scripts{
