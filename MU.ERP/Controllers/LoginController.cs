@@ -15,5 +15,10 @@ namespace MU.ERP.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Strings()
+        {
+            return JavaScript("alert('OK')");
+        }
     }
 }
