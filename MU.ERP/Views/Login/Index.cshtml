@@ -4,14 +4,17 @@
     <title>登录</title>
 </head>
 <body>
+    <form data-bind="submit:loginClick">
+        用户名：<input type="text" data-bind="textinput: form.usercode" value="" /><br />
+        密  码：<input type="password" data-bind="textinput: form.password" value="" /><br />
+        <input type="checkbox" data-bind="checked:form.remember" /><span>记住密码</span><br />
+        <input type="submit" value="登录" />
+    </form>
     <div>
-        姓名：<label data-bind="text:Name"></label><br />
-        职业：<input type="text" name="Profession" data-bind="textinput:Profession" value="" />
-    </div>
-    <div>
-        <input type="text" id="txt_testobservable" value="" />
+        <span data-bind="text:message"></span>
     </div>
     <script src="~/Scripts/knockout-3.4.2.js"></script>
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
     <script src="~/Scripts/index.js"></script>
 </body>
 </html>
