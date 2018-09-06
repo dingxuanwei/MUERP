@@ -16,12 +16,7 @@ namespace ConsoleApp
         private static ILog log = LogManager.GetLogger("ConsoleApp");
         static void Main(string[] args)
         {
-            using (CYQ.Data.MAction action = new CYQ.Data.MAction("Users"))
-            {
-                var json = action.Select(1, 10, 10).ToJson();
-                Console.WriteLine(json);
-            }
-
+            
             Console.ReadLine();
         }
 
