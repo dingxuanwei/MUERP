@@ -12,9 +12,14 @@ namespace MU.ERP.Controllers
     {
         public ActionResult Index()
         {
-            DB.Insert(new Book() { Name = "pro csharp 5.0", Author = "dingxw", Price = 128.99m });
-            //DB.Insert(new Book() { Name = "pro csharp 5.0", Author = "dingxw"});
             return View();
+        }
+
+
+        public ActionResult Users(int page, int rows)
+        {
+            var grid = DB.SelectPage<sys_user, string>(page, rows, o => o.UserCode, x => x.UserCode == "dingxuanwei");
+            return Json(grid);
         }
     }
 }

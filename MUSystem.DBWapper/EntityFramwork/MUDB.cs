@@ -12,9 +12,9 @@
         {
         }
 
-        public virtual DbSet<Book> MyEntities { get; set; }
+        public virtual DbSet<sys_user> sys_User { get; set; }
+        public virtual DbSet<sys_role> sys_Role { get; set; }
 
-        
     }
 
 }
