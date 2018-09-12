@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 上海秒优</title>
     @Styles.Render("~/Content/easyuicss")
-    <link href="~/Content/css/icon/icon.css" rel="stylesheet" />
-    @Scripts.Render("~/bundles/jquery")
-    <script src="~/Content/easyloader.js" type="text/javascript"></script>
-    
+    <link href="~/Content/Site.css" rel="stylesheet" />
     @RenderSection("head", required: false)
 </head>
 <body class="easyui-layout">
@@ -39,7 +36,8 @@
     <div data-options="region:'center'">
         @RenderBody()
     </div>
-    <script src="~/Scripts/knockout-3.4.2.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
     <script src="~/Content/layout.js"></script>
     @RenderSection("scripts", required: false)
 </body>

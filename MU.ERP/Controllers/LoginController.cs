@@ -18,14 +18,24 @@ namespace MU.ERP.Controllers
         }
 
         [HttpPost]
-        public ActionResult Check(string usercode, string password, bool remember)
+        [ValidateAntiForgeryToken]
+        public ActionResult Check(string usercode, string password, string returnUrl)
         {
             if (ModelState.IsValid)
+            {
+                FormsAuthentication.SetAuthCookie(usercode, true);
+                if (Url.IsLocalUrl(returnUrl)) return Redirect(returnUrl);
                 return Content("success");
+            }
             else
                 return Content("error");
         }
 
-        
+        [Authorize]
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return Redirect("/Login");
+        }
     }
 }

@@ -15,22 +15,17 @@ namespace MU.ERP
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
-
-            bundles.Add(new StyleBundle("~/Content/bootcss").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-
             bundles.Add(new ScriptBundle("~/bundles/easyui").Include(
-                      "~/Scripts/jquery.easyui-{version}.js",
-                      "~/Scripts/vue.js"));
+                        "~/Scripts/vue.js",
+                        "~/Content/babel-polyfill.js",
+                        "~/Content/easyui/vx-easyui.min.js",
+                        "~/Content/babel.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/easyuicss").Include(
-                      "~/Content/themes/default/easyui.css",
-                      "~/Content/themes/icon.css",
-                      "~/Content/site.css"));
+                      "~/Content/easyui/themes/default/easyui.css",
+                      "~/Content/easyui/themes/color.css",
+                      "~/Content/easyui/themes/icon.css",
+                      "~/Content/easyui/themes/vue.css"));
         }
 
         public static void ResetIgnorePatterns(IgnoreList ignoreList)
