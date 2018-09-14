@@ -1,0 +1,57 @@
+﻿body {
+    background:url(/Content/images/login/login_bg.jpg);
+    font-size:14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height:23px;
+    margin:0;
+    padding:0;
+    color:#3b6e81;
+}
+.loginform {
+    margin:0 auto;
+    width:330px;
+    height:243px;
+    padding-left:300px;
+    padding-top:110px;
+    margin-top:10%;
+    background:url(/Content/images/login/login_panel.png) no-repeat;
+    position:relative;
+}
+.logo {
+    position:absolute;
+    left:50px;
+    top:90px;
+}
+h1{
+    margin-top:-30px;
+}
+.inputform {
+    padding:5px;
+}
+.inputform > input {
+    color:#808080;
+    padding:3px;
+    border:1px solid #77a2c1;
+    font-size:14px;
+    width:230px;
+}
+.inputform > input[type=submit] {
+    width:238px;
+    background-color:#59c5ee;
+    color:white;
+}
+.inputform > input[type=submit]:hover {
+    background-color:#7fd9f6;
+}
+.text-danger {
+    color:#f54119;
+}
+.title-bottom {
+    position:absolute;
+    bottom:15px;
+    left:120px;
+    font-size:12px;
+    color:#15428b;
+    font-weight:bold;
+    text-align:center;
+}

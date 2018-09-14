@@ -664,6 +664,7 @@
     <Content Include="Content\images\tree\Tree_Vert.gif" />
     <Content Include="Content\images\zip.gif" />
     <Content Include="Content\layout.js" />
+    <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -687,7 +688,7 @@
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\login.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
