@@ -181,7 +181,7 @@ namespace MU.DBWapper
         /// </summary>
         /// <typeparam name="T">表的实体类</typeparam>
         /// <param name="where">linq表达式</param>
-        public static IEnumerable<T> Select<T>(Expression<Func<T, bool>> where = null) where T : class
+        public static IList<T> Select<T>(Expression<Func<T, bool>> where = null) where T : class
         {
             try
             {

@@ -4,31 +4,40 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using MU.ERP.Models;
+using MU.DBWapper;
+using MU.Models;
 
 namespace MU.ERP.Controllers
 {
-    [App_Start.Localization]
-    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Index()
+        [AllowAnonymous]
+        public ActionResult Index(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return PartialView();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Check(string usercode, string password, string returnUrl)
+        public ActionResult Check(LoginViewModel model, string returnUrl)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                FormsAuthentication.SetAuthCookie(usercode, true);
-                if (Url.IsLocalUrl(returnUrl)) return Redirect(returnUrl);
-                return Content("success");
+                return View(model);
             }
-            else
-                return Content("error");
+            var result = DB.Select<sys_user>(p => p.UserCode == model.usercode && p.Password == model.password);
+            if (result.Count != 1) { ModelState.AddModelError("", "用户名或密码不正确"); return View(model); }
+            if (!result[0].IsEnable) { ModelState.AddModelError("", "用户已经被禁用，请联系管理员"); return View(model); }
+
+            MUser<sys_user>.SignIn(result[0].UserName, result[0], 60 * 24);
+
+            if (Url.IsLocalUrl(returnUrl)) return Redirect(returnUrl);
+            return Redirect("/Home");
+            
         }
 
         [Authorize]

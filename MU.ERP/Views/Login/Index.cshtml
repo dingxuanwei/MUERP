@@ -1,7 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@model MU.ERP.Models.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
     <title>登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/login.css" rel="stylesheet" />
     <script src="~/Scripts/vue.min.js"></script>
     <script src="~/Scripts/login.js"></script>
@@ -10,20 +14,23 @@
     <div class="loginform" id="app">
         <div class="logo"><img src="/Content/images/login/mulogo.png" alt=""></div>
         <h1>云供应链管理系统</h1>
-        <form v-on:submit="Submit">
+        @using (Html.BeginForm("Check", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
             <div class="inputform">
-                <input type="text" v-model="user.name" placeholder="用户名" />
+                @Html.TextBoxFor(m=>m.usercode, new { placeholder= "用户名" })
             </div>
             <div class="inputform">
-                <input type="password" v-model="user.password" placeholder="密码" />
+                @Html.PasswordFor(m => m.password, new { placeholder = "密码" })
             </div>
             <div class="inputform">
                 <input type="submit" value="登录" />
             </div>
             <div class="inputform">
-                <p class="text-danger">{{msg}}</p>
+                <p class="text-danger">@Html.ValidationSummary(true, "")</p>
             </div>
-        </form>
+        }
+        
         <div class="title-bottom">Copyright ©2015-@DateTime.Today.Year 秒优供应链管理有限公司  All Rights Reserved</div>
     </div>
 </body>
