@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 上海秒优</title>
     @Styles.Render("~/Content/easyuicss")
+    <link href="~/Content/fontawesome/css/animation.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome/css/fontello.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     @RenderSection("head", required: false)
 </head>
@@ -15,9 +17,9 @@
             供应链管理系统
         </span>
         <div class="easyui-panel head-right">
-            <a href="#" class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-box_world'">中文</a>
+            <a href="#" class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-glass'">中文</a>
             <a href="#" class="easyui-menubutton" data-options="menu:'#mm2',iconCls:'icon-user'">管理员</a>
-            <a href="javascript:void(0);" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user_go'">安全退出</a>
+            <a href="/Login/LogOut" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user_go'">安全退出</a>
         </div>
         <div id="mm1" style="width:100px;">
             <div data-options="iconCls:'icon-box_world'">中文</div>
@@ -38,7 +40,8 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    <script src="~/Content/layout.js"></script>
+    @Scripts.Render("~/bundles/easyui")
+    <script src="~/Scripts/layout.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

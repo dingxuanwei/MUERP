@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -119,6 +123,34 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.Container.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.11\lib\net45\Unity.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -143,12 +175,37 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\easyui\babel-polyfill.js" />
-    <Content Include="Content\easyui\babel.min.js" />
+    <Content Include="Content\easyui\easyloader.js" />
+    <Content Include="Content\easyui\jquery.easyui.min.js" />
+    <Content Include="Content\easyui\jquery.easyui.mobile.js" />
+    <Content Include="Content\easyui\jquery.min.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-af.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-am.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ar.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-bg.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ca.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-cs.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-cz.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-da.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-de.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-el.js" />
     <Content Include="Content\easyui\locale\easyui-lang-en.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-es.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-fa.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-fr.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-it.js" />
     <Content Include="Content\easyui\locale\easyui-lang-jp.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ko.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-nl.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-pl.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-pt_BR.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ru.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-sv_SE.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-tr.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ua.js" />
     <Content Include="Content\easyui\locale\easyui-lang-zh_CN.js" />
     <Content Include="Content\easyui\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Content\easyui\themes\angular.css" />
     <Content Include="Content\easyui\themes\black\accordion.css" />
     <Content Include="Content\easyui\themes\black\calendar.css" />
     <Content Include="Content\easyui\themes\black\checkbox.css" />
@@ -445,6 +502,7 @@
     <Content Include="Content\easyui\themes\material-teal\images\spinner_arrows.png" />
     <Content Include="Content\easyui\themes\material-teal\images\tabs_icons.png" />
     <Content Include="Content\easyui\themes\material-teal\images\tagbox_icons.png" />
+    <Content Include="Content\easyui\themes\material-teal\images\Thumbs.db" />
     <Content Include="Content\easyui\themes\material-teal\images\tree_icons.png" />
     <Content Include="Content\easyui\themes\material-teal\images\validatebox_warning.png" />
     <Content Include="Content\easyui\themes\material-teal\layout.css" />
@@ -503,6 +561,7 @@
     <Content Include="Content\easyui\themes\material\images\spinner_arrows.png" />
     <Content Include="Content\easyui\themes\material\images\tabs_icons.png" />
     <Content Include="Content\easyui\themes\material\images\tagbox_icons.png" />
+    <Content Include="Content\easyui\themes\material\images\Thumbs.db" />
     <Content Include="Content\easyui\themes\material\images\tree_icons.png" />
     <Content Include="Content\easyui\themes\material\images\validatebox_warning.png" />
     <Content Include="Content\easyui\themes\material\layout.css" />
@@ -588,8 +647,17 @@
     <Content Include="Content\easyui\themes\metro\tree.css" />
     <Content Include="Content\easyui\themes\metro\validatebox.css" />
     <Content Include="Content\easyui\themes\metro\window.css" />
+    <Content Include="Content\easyui\themes\mobile.css" />
     <Content Include="Content\easyui\themes\vue.css" />
-    <Content Include="Content\easyui\vx-easyui-min.js" />
+    <Content Include="Content\fontawesome\config.json" />
+    <Content Include="Content\fontawesome\css\animation.css" />
+    <Content Include="Content\fontawesome\css\fontello-codes.css" />
+    <Content Include="Content\fontawesome\css\fontello-embedded.css" />
+    <Content Include="Content\fontawesome\css\fontello-ie7-codes.css" />
+    <Content Include="Content\fontawesome\css\fontello-ie7.css" />
+    <Content Include="Content\fontawesome\css\fontello.css" />
+    <Content Include="Content\fontawesome\demo.html" />
+    <Content Include="Content\fontawesome\font\fontello.svg" />
     <Content Include="Content\images\arrow.gif" />
     <Content Include="Content\images\back.gif" />
     <Content Include="Content\images\bg_v6.gif" />
@@ -664,7 +732,16 @@
     <Content Include="Content\images\tree\Tree_Middle.gif" />
     <Content Include="Content\images\tree\Tree_Vert.gif" />
     <Content Include="Content\images\zip.gif" />
-    <Content Include="Content\layout.js" />
+    <Content Include="Content\layer\layer.js" />
+    <Content Include="Content\layer\mobile\layer.js" />
+    <Content Include="Content\layer\mobile\need\layer.css" />
+    <Content Include="Content\layer\theme\default\icon-ext.png" />
+    <Content Include="Content\layer\theme\default\icon.png" />
+    <Content Include="Content\layer\theme\default\layer.css" />
+    <Content Include="Content\layer\theme\default\loading-0.gif" />
+    <Content Include="Content\layer\theme\default\loading-1.gif" />
+    <Content Include="Content\layer\theme\default\loading-2.gif" />
+    <Content Include="Scripts\layout.js" />
     <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -672,8 +749,10 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\easyui\themes\material-teal\images\Thumbs.db" />
-    <Content Include="Content\easyui\themes\material\images\Thumbs.db" />
+    <Content Include="Content\fontawesome\font\fontello.eot" />
+    <Content Include="Content\fontawesome\font\fontello.ttf" />
+    <Content Include="Content\fontawesome\font\fontello.woff" />
+    <Content Include="Content\fontawesome\font\fontello.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Remark.txt" />

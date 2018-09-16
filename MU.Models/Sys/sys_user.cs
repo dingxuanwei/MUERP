@@ -21,7 +21,11 @@ namespace MU.Models
         [MaxLength(50)]
         public string OrganizeName { get; set; }
         [MaxLength(50)]
+        public string FactoryCode { get; set; }
+        [MaxLength(50)]
         public string DepCode { get; set; }
+        [MaxLength(50)]
+        public string DepNo { get; set; }
         [MaxLength(500)]
         public string ConfigJSON { get; set; }
         public bool IsEnable { get; set; }
@@ -33,10 +37,6 @@ namespace MU.Models
         [MaxLength(50)]
         public string UpdatePerson { get; set; }
         public DateTime UpdateDate { get; set; }
-        [MaxLength(50)]
-        public string FactoryCode { get; set; }
-        [MaxLength(50)]
-        public string DepNo { get; set; }
         [MaxLength(50)]
         public string Token { get; set; }
     }

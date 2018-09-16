@@ -17,3 +17,18 @@
 .head-right > a { color:white; }
 .head-left {background:url(/Content/images/logo/logo48.png) no-repeat left; margin-left:10px; width:310px; height:46px;float:left; padding-left:70px; font-size:24px; font-weight:bolder; font-family:'Microsoft YaHei' !important;}
 .footer{text-align:center;color:#15428B; margin:0px; padding:0px;line-height:23px; font-weight:bold;}
+
+.l-btn-icon,.panel-icon,.menu-icon,.tabs-icon {
+    font-family:FontAwesome;
+    font-size:14px !important;
+    line-height:normal !important;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    color:#6699cc;
+    text-align:center;
+}
+.tabs-icon {
+    font-size:16px !important;
+    font-weight:normal;
+}

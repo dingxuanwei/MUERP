@@ -16,16 +16,12 @@ namespace MU.ERP
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/easyui").Include(
-                        "~/Scripts/vue.js",
-                        "~/Content/babel-polyfill.js",
-                        "~/Content/easyui/vx-easyui.min.js",
-                        "~/Content/babel.min.js"));
+                        "~/Content/easyui/jquery.easyui.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/easyuicss").Include(
                       "~/Content/easyui/themes/default/easyui.css",
                       "~/Content/easyui/themes/color.css",
-                      "~/Content/easyui/themes/icon.css",
-                      "~/Content/easyui/themes/vue.css"));
+                      "~/Content/easyui/themes/icon.css"));
         }
 
         public static void ResetIgnorePatterns(IgnoreList ignoreList)

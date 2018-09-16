@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
+using System.Data.SqlClient;
 
 namespace MU.DBWapper
 {
@@ -347,6 +348,24 @@ namespace MU.DBWapper
         private static void WriteException(Exception ex)
         {
             log.Error(ex);
+        }
+
+        public static string Test()
+        {
+            try
+            {
+                var connStr = new MUDB().Database.Connection.ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open) return "服务器连接正常";
+                    return "服务器连接异常";
+                }
+            }
+            catch (Exception ex)
+            {
+                return string.Format("数据库连接失败，{0}", ex.Message);
+            }
         }
     }
 

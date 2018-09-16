@@ -11,27 +11,33 @@
     <script src="~/Scripts/login.js"></script>
 </head>
 <body>
-    <div class="loginform" id="app">
-        <div class="logo"><img src="/Content/images/login/mulogo.png" alt=""></div>
+    <div class="loginform">
+        <div class="logo"><img src="/Content/images/login/mulogo.png" alt="logo"></div>
         <h1>云供应链管理系统</h1>
-        @using (Html.BeginForm("Check", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
         {
             @Html.AntiForgeryToken()
             <div class="inputform">
-                @Html.TextBoxFor(m=>m.usercode, new { placeholder= "用户名" })
+                @Html.TextBoxFor(m => m.usercode, new { placeholder = "用户名称" })<br />
+                @Html.ValidationMessageFor(m => m.usercode, "", new { @class = "text-danger" })
             </div>
             <div class="inputform">
-                @Html.PasswordFor(m => m.password, new { placeholder = "密码" })
+                @Html.PasswordFor(m => m.password, new { placeholder = "用户密码" })<br />
+                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
             </div>
             <div class="inputform">
                 <input type="submit" value="登录" />
             </div>
             <div class="inputform">
-                <p class="text-danger">@Html.ValidationSummary(true, "")</p>
+                <p>@Html.ValidationSummary(true, "", new { @class = "text-danger" })</p>
             </div>
         }
         
         <div class="title-bottom">Copyright ©2015-@DateTime.Today.Year 秒优供应链管理有限公司  All Rights Reserved</div>
+    </div>
+
+    <div id="app" style="position:absolute;bottom:30px;width:100%;color:white;">
+        <center>{{msg}}</center>
     </div>
 </body>
 </html>

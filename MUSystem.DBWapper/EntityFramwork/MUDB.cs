@@ -10,6 +10,7 @@
         public MUDB()
             : base("name=MUDB")
         {
+            
         }
 
         public virtual DbSet<sys_user> sys_User { get; set; }

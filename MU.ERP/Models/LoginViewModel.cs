@@ -10,12 +10,12 @@ namespace MU.ERP.Models
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "用户名称不能为空")]
         [Display(Name = "用户名称")]
         [MaxLength(18)]
         public string usercode { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "用户密码不能为空")]
         [Display(Name = "用户密码")]
         [MaxLength(18)]
         [DataType(DataType.Password)]
