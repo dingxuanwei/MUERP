@@ -35,8 +35,15 @@
     <div data-options="region:'south',split:true" style="height:30px;background-color:#D2E0F2;">
         <div class="footer">Copyright © 2015-@DateTime.Today.Year 上海秒优供应链管理有限公司, All Rights Reserved</div>
     </div>
-    <div data-options="region:'west',split:true" title="导航菜单" style="width:175px;"></div>
+    <div data-options="region:'west',split:true" title="导航菜单" style="width:175px;">
+        @Html.Partial("_Menu")
+    </div>
     <div data-options="region:'center'">
+        <noscript>
+            <div class="noscript">
+                <img src="/Content/images/noscript.gif" alt="抱歉，请开启脚本支持！" />
+            </div>
+        </noscript>
         @RenderBody()
     </div>
 

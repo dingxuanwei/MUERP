@@ -15,8 +15,7 @@ namespace MU.ERP.Controllers
         public ActionResult Index()
         {
             var loginer = (User as MUser<sys_user>).UserData;
-            Console.WriteLine(loginer.UserName);
-            return View();
+            return View(loginer);
         }
     }
 }

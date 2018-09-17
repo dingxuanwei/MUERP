@@ -31,5 +31,35 @@
 .tabs-icon {
     font-size:16px !important;
     font-weight:normal;
-    
+}
+
+
+.accordion ul {
+    list-style-type:none;
+    margin:0;
+    padding:10px;
+}
+.accordion ul li {
+    padding:0;
+    margin-left:0;
+    display:block;
+}
+.accordion ul li a {
+    line-height:24px;
+    cursor:pointer; 
+    text-decoration:none;
+    color:#222;  
+    display:block; 
+}
+.accordion ul li a {
+    margin:2px 0px;
+    padding-left:10px;
+    padding-top:2px;
+    border:1px solid #fff;
+}
+.accordion ul li a:hover{
+    color: #D16C00;
+    border: 1px dashed #D69C00;
+    background:#FFE88C;
+    font-weight:bold;
 }

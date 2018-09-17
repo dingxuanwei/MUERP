@@ -13,14 +13,7 @@ public class PubConstant
     {
         get
         {
-            //string _connectionString = ConfigurationManager.AppSettings["ConnectionString"];       
-            //string ConStringEncrypt = ConfigurationManager.AppSettings["ConStringEncrypt"];
-            //if (ConStringEncrypt == "true")
-            //{
-            //    _connectionString = DESEncrypt.Decrypt(_connectionString);
-            //}
-            //return _connectionString; 
-            return ConfigurationManager.ConnectionStrings["MES"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["ERP"].ConnectionString;
         }
     }
 

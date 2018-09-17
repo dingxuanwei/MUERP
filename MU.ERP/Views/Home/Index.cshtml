@@ -1,8 +1,14 @@
 ﻿@{
     ViewBag.Title = "首页";
 }
+@model MU.Models.sys_user
 
-<input type="text" data-i18n-placeholder="displayMessage" />
+<ul>
+    <li>@Model.UserCode</li>
+    <li>@Model.UserName</li>
+    <li>@Model.Password</li>
+    <li>@Model.LastLoginDate</li>
+</ul>
 
 @section scripts{
 <script>
