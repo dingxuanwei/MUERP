@@ -15,30 +15,11 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            var x = 10;
-            var y = 100;
-            Debug.Assert(x < y);
-            Console.WriteLine("x<y");
-        }
+            var d = DateTime.Now.ToOADate();
+            Console.WriteLine(d);
 
-        [TestMethod]
-        public void TestMethod2()
-        {
-            Console.WriteLine("TestMethod2");
-        }
-
-        [TestMethod]
-        public void MyTestMethod()
-        {
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            for (int i = 0; i < 10000000; i++)
-            {
-                var x = i;
-            }
-            sw.Stop();
-            Debug.Assert(sw.ElapsedMilliseconds > 10);
-            Console.WriteLine(sw.ElapsedMilliseconds);
+            var t = DateTime.FromOADate(d);
+            Console.WriteLine(t.ToString());
         }
     }
 }

@@ -20,15 +20,16 @@
 
 .l-btn-icon,.panel-icon,.menu-icon,.tabs-icon {
     font-family:FontAwesome;
-    font-size:14px !important;
-    line-height:normal !important;
+    font-size:16px !important;
     text-rendering:auto;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     color:#6699cc;
     text-align:center;
+    line-height:16px !important;
 }
 .tabs-icon {
     font-size:16px !important;
     font-weight:normal;
+    
 }

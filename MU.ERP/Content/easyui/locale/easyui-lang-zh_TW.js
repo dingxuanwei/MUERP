@@ -4,10 +4,12 @@ if ($.fn.pagination){
 	$.fn.pagination.defaults.displayMsg = '顯示{from}到{to},共{total}記錄';
 }
 if ($.fn.datagrid){
-	$.fn.datagrid.defaults.loadMsg = '正在處理，請稍待。。。';
+    $.fn.datagrid.defaults.loadMsg = '正在處理，請稍待。。。';
+    $.fn.datagrid.defaults.emptyMsg = '沒有査詢到相關記錄';
 }
 if ($.fn.treegrid && $.fn.datagrid){
-	$.fn.treegrid.defaults.loadMsg = $.fn.datagrid.defaults.loadMsg;
+    $.fn.treegrid.defaults.loadMsg = $.fn.datagrid.defaults.loadMsg;
+    $.fn.treegrid.defaults.emptyMsg = $.fn.datagrid.defaults.emptyMsg;
 }
 if ($.messager){
 	$.messager.defaults.ok = '確定';

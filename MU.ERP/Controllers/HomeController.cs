@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MU.Models;
 using MU.DBWapper;
+using MU.ERP.Models;
 
 namespace MU.ERP.Controllers
 {
@@ -13,14 +14,9 @@ namespace MU.ERP.Controllers
     {
         public ActionResult Index()
         {
+            var loginer = (User as MUser<sys_user>).UserData;
+            Console.WriteLine(loginer.UserName);
             return View();
-        }
-
-
-        public ActionResult Users(int page, int rows)
-        {
-            var grid = DB.SelectPage<sys_user, string>(page, rows, o => o.UserCode, x => x.UserCode == "dingxuanwei");
-            return Json(grid);
         }
     }
 }

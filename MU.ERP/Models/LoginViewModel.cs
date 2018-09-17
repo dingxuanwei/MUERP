@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
+using Newtonsoft.Json;
 
 namespace MU.ERP.Models
 {
@@ -61,7 +62,7 @@ namespace MU.ERP.Models
             if (userData == null) throw new ArgumentNullException("userData");
 
             string data = null;
-            if (userData != null) data = Newtonsoft.Json.JsonConvert.SerializeObject(userData);
+            if (userData != null) data = JsonConvert.SerializeObject(userData);
             FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(2, loginName, DateTime.Now, DateTime.Now.AddDays(1), true, data);
             string cookieValue = FormsAuthentication.Encrypt(ticket);
 
@@ -76,6 +77,28 @@ namespace MU.ERP.Models
 
             context.Response.Cookies.Remove(cookie.Name);
             context.Response.Cookies.Add(cookie);
+        }
+
+        public static void TrySetUserInfo(HttpContext context)
+        {
+            if (context == null) throw new ArgumentException("context");
+
+            HttpCookie cookie = context.Request.Cookies[FormsAuthentication.FormsCookieName];
+            if (cookie == null || string.IsNullOrEmpty(cookie.Value)) return;
+            try
+            {
+                TUserData userData = null;
+                FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(cookie.Value);
+                if (ticket != null && !string.IsNullOrEmpty(ticket.UserData))
+                {
+                    userData = JsonConvert.DeserializeObject<TUserData>(ticket.UserData);
+                    if (userData != null)
+                    {
+                        context.User = new MUser<TUserData>(ticket, userData);
+                    }
+                }
+            }
+            catch { }
         }
     }
 }

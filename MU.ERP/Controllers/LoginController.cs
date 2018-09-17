@@ -7,6 +7,7 @@ using System.Web.Security;
 using MU.ERP.Models;
 using MU.DBWapper;
 using MU.Models;
+using MU.Extensions;
 
 namespace MU.ERP.Controllers
 {
@@ -39,6 +40,7 @@ namespace MU.ERP.Controllers
             {
                 return PartialView(model);
             }
+            model.password = model.password.MD5();
             var result = DB.Select<sys_user>(p => p.UserCode == model.usercode && p.Password == model.password);
             if (result.Count != 1) { ModelState.AddModelError("", "用户名或密码不正确"); return PartialView(model); }
             if (!result[0].IsEnable) { ModelState.AddModelError("", "用户已经被禁用，请联系管理员"); return PartialView(model); }

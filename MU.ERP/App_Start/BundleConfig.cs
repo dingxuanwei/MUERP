@@ -20,8 +20,7 @@ namespace MU.ERP
 
             bundles.Add(new StyleBundle("~/Content/easyuicss").Include(
                       "~/Content/easyui/themes/default/easyui.css",
-                      "~/Content/easyui/themes/color.css",
-                      "~/Content/easyui/themes/icon.css"));
+                      "~/Content/easyui/themes/color.css"));
         }
 
         public static void ResetIgnorePatterns(IgnoreList ignoreList)

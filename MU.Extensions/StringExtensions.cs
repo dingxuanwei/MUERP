@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace MU.Extensions
 {
@@ -38,6 +39,12 @@ namespace MU.Extensions
             return bytes;
         }
 
-        
+        public static string MD5(this string s)
+        {
+            byte[] sourcebytes = System.Text.Encoding.UTF8.GetBytes(s);
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] output = md5.ComputeHash(sourcebytes);
+            return BitConverter.ToString(output).Replace("-", "");
+        }
     }
 }

@@ -163,8 +163,10 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\LocalizationAttribute.cs" />
+    <Compile Include="App_Start\MvcMenuFilter.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Bas\BasAreaRegistration.cs" />
+    <Compile Include="Areas\Bas\Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
@@ -175,6 +177,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\easyui\easyloader.js" />
     <Content Include="Content\easyui\jquery.easyui.min.js" />
     <Content Include="Content\easyui\jquery.easyui.mobile.js" />
@@ -658,6 +664,10 @@
     <Content Include="Content\fontawesome\css\fontello.css" />
     <Content Include="Content\fontawesome\demo.html" />
     <Content Include="Content\fontawesome\font\fontello.svg" />
+    <Content Include="Content\i18n\jquery.i18n.properties.js" />
+    <Content Include="Content\i18n\jquery.i18n.properties.min.js" />
+    <Content Include="Content\i18n\local\en.js" />
+    <Content Include="Content\i18n\local\zh_CN.js" />
     <Content Include="Content\images\arrow.gif" />
     <Content Include="Content\images\back.gif" />
     <Content Include="Content\images\bg_v6.gif" />
@@ -741,6 +751,11 @@
     <Content Include="Content\layer\theme\default\loading-0.gif" />
     <Content Include="Content\layer\theme\default\loading-1.gif" />
     <Content Include="Content\layer\theme\default\loading-2.gif" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\layout.js" />
     <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
@@ -753,7 +768,15 @@
     <Content Include="Content\fontawesome\font\fontello.ttf" />
     <Content Include="Content\fontawesome\font\fontello.woff" />
     <Content Include="Content\fontawesome\font\fontello.woff2" />
+    <Content Include="Areas\Bas\Views\web.config" />
+    <Content Include="Areas\Bas\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Bas\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Bas\Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Remark.txt" />
     <Content Include="Scripts\jquery-1.11.3.js" />
@@ -765,6 +788,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -786,11 +810,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Bas\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MU.Extensions\MU.Extensions.csproj">
+      <Project>{5f84a21d-5e35-4010-9723-056ea8f1ff06}</Project>
+      <Name>MU.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MU.Models\MU.Models.csproj">
       <Project>{51608518-4178-4ce8-adfc-c5d46c97cede}</Project>
       <Name>MU.Models</Name>

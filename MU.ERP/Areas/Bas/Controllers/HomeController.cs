@@ -4,15 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
-namespace MU.ERP.Controllers
+namespace MU.ERP.Areas.Bas.Controllers
 {
-    public class ManagerController : Controller
+    public class HomeController : Controller
     {
-        // GET: Manager
+        // GET: Bas/Home
         public ActionResult Index()
         {
-            return View();
+            return PartialView();
         }
     }
 }

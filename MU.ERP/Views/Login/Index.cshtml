@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/login.css" rel="stylesheet" />
-    <script src="~/Scripts/vue.min.js"></script>
     <script src="~/Scripts/login.js"></script>
 </head>
 <body>
@@ -36,8 +35,8 @@
         <div class="title-bottom">Copyright ©2015-@DateTime.Today.Year 秒优供应链管理有限公司  All Rights Reserved</div>
     </div>
 
-    <div id="app" style="position:absolute;bottom:30px;width:100%;color:white;">
-        <center>{{msg}}</center>
+    <div style="position:absolute;bottom:30px;width:100%;color:white;">
+        <center id="msg"></center>
     </div>
 </body>
 </html>
