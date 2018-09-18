@@ -817,6 +817,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MU.BLL\MU.BLL.csproj">
+      <Project>{5b683980-9a90-41b1-a98e-d7caa2f27526}</Project>
+      <Name>MU.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MU.DAL\MU.DAL.csproj">
+      <Project>{0feb0d95-f117-4ca8-a003-75b7fabb09f9}</Project>
+      <Name>MU.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MU.Extensions\MU.Extensions.csproj">
       <Project>{5f84a21d-5e35-4010-9723-056ea8f1ff06}</Project>
       <Name>MU.Extensions</Name>
@@ -824,10 +832,6 @@
     <ProjectReference Include="..\MU.Models\MU.Models.csproj">
       <Project>{51608518-4178-4ce8-adfc-c5d46c97cede}</Project>
       <Name>MU.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MUSystem.DBWapper\MU.DBWapper.csproj">
-      <Project>{9f602b1e-0a48-4ac6-a39c-ef0be1b64b38}</Project>
-      <Name>MU.DBWapper</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

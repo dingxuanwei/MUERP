@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F84A21D-5E35-4010-9723-056EA8F1FF06}</ProjectGuid>
+    <ProjectGuid>{5B683980-9A90-41B1-A98E-D7CAA2F27526}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MU.Extensions</RootNamespace>
-    <AssemblyName>MU.Extensions</AssemblyName>
+    <RootNamespace>MU.BLL</RootNamespace>
+    <AssemblyName>MU.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConfig.cs" />
-    <Compile Include="Email.cs" />
-    <Compile Include="RedisHelp.cs" />
-    <Compile Include="StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MU.DAL\MU.DAL.csproj">
+      <Project>{0feb0d95-f117-4ca8-a003-75b7fabb09f9}</Project>
+      <Name>MU.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MU.Models\MU.Models.csproj">
+      <Project>{51608518-4178-4ce8-adfc-c5d46c97cede}</Project>
+      <Name>MU.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

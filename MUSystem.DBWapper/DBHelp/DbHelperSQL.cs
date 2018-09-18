@@ -3,17 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-
 
 /// <summary>
 /// 数据访问抽象基础类
-/// Copyright (C) Maticsoft 
 /// </summary>
 public abstract class DbHelperSQL
 {
-    //数据库连接字符串(web.config来配置)，多数据库可使用DbHelperSQLP来实现.
     public static string connectionString = PubConstant.ConnectionString;
     public DbHelperSQL()
     {

@@ -56,6 +56,12 @@ namespace MU.ERP.Models
                 return principal.IsInRole(role);
         }
 
+        /// <summary>
+        /// 登录到系统
+        /// </summary>
+        /// <param name="loginName">登录名称</param>
+        /// <param name="userData">登录者数据</param>
+        /// <param name="expiration">超时时间，单位分钟</param>
         public static void SignIn(string loginName, TUserData userData, int expiration)
         {
             if (string.IsNullOrEmpty(loginName)) throw new ArgumentNullException("loginName");

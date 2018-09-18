@@ -8,6 +8,7 @@ namespace MU.Models
 {
     public class sys_menu
     {
+
         public string MenuCode { get; set; }
         public string ParentCode { get; set; }
         public string MenuName { get; set; }

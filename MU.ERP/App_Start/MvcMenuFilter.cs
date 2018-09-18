@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MU.DBWapper;
 using MU.Models;
 
 namespace MU.ERP.App_Start
@@ -44,8 +43,8 @@ namespace MU.ERP.App_Start
                     list.Add(url);
                 }
 
-                if (DB.Select<sys_user>(p => p.UserCode == "admin").Count == 0)
-                    filterContext.Result = new ContentResult() { Content = "你没有访问此功能的权限，请联系管理员！" };
+                //if (DB.Select<sys_user>(p => p.UserCode == "admin").Count == 0)
+                //    filterContext.Result = new ContentResult() { Content = "你没有访问此功能的权限，请联系管理员！" };
             }
 
             base.OnActionExecuting(filterContext);
