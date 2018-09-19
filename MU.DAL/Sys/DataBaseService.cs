@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MU.DBWapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace MU.DAL.Sys
 {
     public class DataBaseService
     {
-
+        public static string TestConnection()
+        {
+            return DB.Test();
+        }
     }
 }

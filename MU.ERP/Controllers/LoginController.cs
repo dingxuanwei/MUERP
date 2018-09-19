@@ -8,6 +8,7 @@ using MU.ERP.Models;
 using MU.DAL;
 using MU.Models;
 using MU.Extensions;
+using MU.DAL.Sys;
 
 namespace MU.ERP.Controllers
 {
@@ -27,7 +28,7 @@ namespace MU.ERP.Controllers
         [AllowAnonymous]
         public ActionResult ConnectionTest()
         {
-            var info = DB.Test();
+            var info = DataBaseService.TestConnection();
             return Content(info);
         }
 
@@ -41,13 +42,19 @@ namespace MU.ERP.Controllers
                 return PartialView(model);
             }
 
+            var service = new sys_userService();
+            var loginer = service.LoginCheck(model.usercode, model.password);
+            if (loginer == null) { ModelState.AddModelError("", "用户名称或密码错误"); return PartialView(model); }
+            if (!loginer.IsEnable) { ModelState.AddModelError("", "该用户已被禁用"); return PartialView(model); }
 
             int LoginEffectiveHours = Convert.ToInt32(AppConfig.Get("LoginEffectiveHours"));
-            MUser<sys_user>.SignIn(result[0].UserName, result[0], 60 * LoginEffectiveHours);
+            MUser<sys_user>.SignIn(loginer.UserName, loginer, 60 * LoginEffectiveHours);
+
+            service.UpdateUserLoginCountAndDate(loginer);
 
             if (Url.IsLocalUrl(returnUrl)) return Redirect(returnUrl);
             return Redirect("/Home");
-            
+
         }
 
         [Authorize]
