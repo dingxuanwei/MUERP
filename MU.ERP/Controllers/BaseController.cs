@@ -1,8 +1,5 @@
-﻿using MU.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MU.ERP.Models;
+using MU.DBWapper.Models;
 using System.Web.Mvc;
 
 namespace MU.ERP.Controllers
@@ -11,5 +8,14 @@ namespace MU.ERP.Controllers
     public class BaseController : Controller
     {
         public sys_user Loginer { get; set; }
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (User != null)
+                Loginer = (User as MUser<sys_user>).UserData;
+            else
+                Redirect("/Login");
+            base.OnActionExecuting(filterContext);
+        }
     }
 }

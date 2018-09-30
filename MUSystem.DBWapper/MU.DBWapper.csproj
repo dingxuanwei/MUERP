@@ -60,22 +60,56 @@
     <Compile Include="EntityFramwork\DB.cs" />
     <Compile Include="DBHelp\DbHelperSQL.cs" />
     <Compile Include="DBHelp\DBUtils.cs" />
-    <Compile Include="EntityFramwork\MUDB.cs" />
+    <Compile Include="Models\MuModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MuModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MuModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_role.cs">
+      <DependentUpon>MuModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_user.cs">
+      <DependentUpon>MuModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DBHelp\PubConstant.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Models\MuModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MuModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\MuModel.edmx.diagram">
+      <DependentUpon>MuModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.xml" />
+    <Content Include="Models\MuModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MuModel.edmx</DependentUpon>
+      <LastGenOutput>MuModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MuModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MuModel.edmx</DependentUpon>
+      <LastGenOutput>MuModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MU.Models\MU.Models.csproj">
-      <Project>{51608518-4178-4ce8-adfc-c5d46c97cede}</Project>
-      <Name>MU.Models</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

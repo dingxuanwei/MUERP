@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using MU.ERP.Models;
 using MU.DAL;
-using MU.Models;
+using MU.DBWapper.Models;
 using MU.Extensions;
 using MU.DAL.Sys;
 

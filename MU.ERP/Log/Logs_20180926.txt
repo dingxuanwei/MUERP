@@ -1,0 +1,20 @@
+2018-09-26 08:57:41,487 [7] ERROR SysAppender - System.InvalidOperationException: 在应用程序配置文件中找不到名为“Entities”的连接字符串。
+   在 System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 MU.DBWapper.DB.Select[T](Expression`1 where) 位置 D:\MUERP\MUSystem.DBWapper\EntityFramwork\DB.cs:行号 193
+2018-09-26 08:57:47,813 [6] ERROR SysAppender - System.InvalidOperationException: 在应用程序配置文件中找不到名为“Entities”的连接字符串。
+   在 System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 MU.DBWapper.DB.Select[T](Expression`1 where) 位置 D:\MUERP\MUSystem.DBWapper\EntityFramwork\DB.cs:行号 193

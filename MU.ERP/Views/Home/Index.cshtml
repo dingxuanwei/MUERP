@@ -1,9 +1,13 @@
 ﻿@{
     ViewBag.Title = "首页";
 }
-@model MU.Models.sys_user
+@model MU.DBWapper.Models.sys_user
 
 <input type="text" data-i18n-Placeholder="displayMessage" value="" />
+
+<ul>
+    <li>@Model.UserName</li>
+</ul>
 
 @section scripts{
 <script>

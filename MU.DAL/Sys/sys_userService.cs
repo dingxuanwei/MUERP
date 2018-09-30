@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MU.DBWapper;
-using MU.Models;
+using MU.DBWapper.Models;
 using MU.Extensions;
 
 namespace MU.DAL.Sys

@@ -1,5 +1,5 @@
 ﻿using MU.ERP.Models;
-using MU.Models;
+using MU.DBWapper.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

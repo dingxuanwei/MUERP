@@ -50,10 +50,6 @@
       <Project>{5F84A21D-5E35-4010-9723-056EA8F1FF06}</Project>
       <Name>MU.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MU.Models\MU.Models.csproj">
-      <Project>{51608518-4178-4ce8-adfc-c5d46c97cede}</Project>
-      <Name>MU.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MUSystem.DBWapper\MU.DBWapper.csproj">
       <Project>{9f602b1e-0a48-4ac6-a39c-ef0be1b64b38}</Project>
       <Name>MU.DBWapper</Name>

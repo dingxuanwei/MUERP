@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net;
 using System.Data.SqlClient;
+using MU.DBWapper.Models;
 
 namespace MU.DBWapper
 {
@@ -24,7 +25,7 @@ namespace MU.DBWapper
             try
             {
                 int rows = 0;
-                using (MUDB db = new MUDB())
+                using (var db = new Entities())
                 {
                     db.Set<T>().Add(model);
                     rows += db.SaveChanges();
@@ -48,7 +49,7 @@ namespace MU.DBWapper
             try
             {
                 int rows = 0;
-                using (MUDB db = new MUDB())
+                using (var db = new Entities())
                 {
                     db.Set<T>().AddRange(models);
                     rows += db.SaveChanges();
@@ -73,7 +74,7 @@ namespace MU.DBWapper
             try
             {
                 int rows = 0;
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     if (db.Entry(model).State == EntityState.Detached)
                     {
@@ -102,7 +103,7 @@ namespace MU.DBWapper
             try
             {
                 int rows = 0;
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     var list = db.Set<T>().Where(where);
                     foreach (var model in list)
@@ -132,7 +133,7 @@ namespace MU.DBWapper
             try
             {
                 int rows = 0;
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     db.Entry(model).State = EntityState.Deleted;
                     rows += db.SaveChanges();
@@ -158,7 +159,7 @@ namespace MU.DBWapper
             {
                 if (where == null) throw new ArgumentNullException();
                 int rows = 0;
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     var list = db.Set<T>().Where(where).ToList();
                     foreach (var item in list)
@@ -187,7 +188,7 @@ namespace MU.DBWapper
             try
             {
                 where = where ?? (p => true);
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     return db.Set<T>().Where(where).ToList();
                 }
@@ -218,7 +219,7 @@ namespace MU.DBWapper
                 grid.total = total;
                 grid.note = "查询成功";
 
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     grid.rows = db.Set<T>().Where(where).OrderBy(orderby).Skip((page - 1) * size).Take(size).ToList();
                 }
@@ -247,7 +248,7 @@ namespace MU.DBWapper
         {
             try
             {
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     return db.Database.SqlQuery<T>(sql, parameters).ToList();
                 }
@@ -273,7 +274,7 @@ namespace MU.DBWapper
         {
             try
             {
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     return db.Database.ExecuteSqlCommand(sql, parameters);
                 }
@@ -295,7 +296,7 @@ namespace MU.DBWapper
         {
             try
             {
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     return db.Database.ExecuteSqlCommand(transactionalBehavior, sql, parameters);
                 }
@@ -311,7 +312,7 @@ namespace MU.DBWapper
         {
             try
             {
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     return db.Set<T>();
                 }
@@ -333,7 +334,7 @@ namespace MU.DBWapper
             try
             {
                 where = where ?? (p => true);
-                using (var db = new MUDB())
+                using (var db = new Entities())
                 {
                     return db.Set<T>().Count(where);
                 }
@@ -354,7 +355,7 @@ namespace MU.DBWapper
         {
             try
             {
-                var connStr = new MUDB().Database.Connection.ConnectionString;
+                var connStr = new Entities().Database.Connection.ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     conn.Open();

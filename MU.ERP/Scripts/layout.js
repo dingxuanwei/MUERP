@@ -39,7 +39,7 @@ var execI18n = function () {
         mode: 'map', //用Map的方式使用资源文件中的值 
         language: i18nLanguage,
         cache: false, //指定浏览器是否对资源文件进行缓存,默认false 
-        encoding: 'UTF-8', //加载资源文件时使用的编码。默认为 UTF-8。  
+        encoding: 'UTF-8', //加载资源文件时使用的编码。默认为 UTF-8。
         callback: function () {//加载成功后设置显示内容 
             try {
                 $('[data-i18n-placeholder]').each(function () {

@@ -91,7 +91,8 @@
 
         // A locale is at least a language code which means at least two files per name. If
         // we also have a country code, thats an extra file per name.
-        settings.totalFiles = (files.length * 2) + ((settings.language.length >= 5) ? files.length : 0);
+        // settings.totalFiles =(files.length * 2) + ((settings.language.length >= 5) ? files.length : 0);
+        settings.totalFiles = 1;
         if (settings.debug) {
             debug('totalFiles: ' + settings.totalFiles);
         }
@@ -104,16 +105,22 @@
             // 1. load base (eg, Messages.properties)
             defaultFileName = settings.path + file + '.js';
             // 2. with language code (eg, Messages_pt.properties)
-            var shortCode = settings.language.substring(0, 2);
-            shortFileName = settings.path + file + '_' + shortCode + '.js';
-            // 3. with language code and country code (eg, Messages_pt_BR.properties)
-            if (settings.language.length >= 5) {
-                var longCode = settings.language.substring(0, 5);
-                longFileName = settings.path + file + '_' + longCode + '.js';
-                fileNames = [defaultFileName, shortFileName, longFileName];
-            } else {
-                fileNames = [defaultFileName, shortFileName];
+            if (!defaultFileName) {
+                var shortCode = settings.language.substring(0, 2);
+                shortFileName = settings.path + file + '_' + shortCode + '.js';
+                // 3. with language code and country code (eg, Messages_pt_BR.properties)
+                if (settings.language.length >= 5) {
+                    var longCode = settings.language.substring(0, 5);
+                    longFileName = settings.path + file + '_' + longCode + '.js';
+                    fileNames = [defaultFileName, shortFileName, longFileName];
+                } else {
+                    fileNames = [defaultFileName, shortFileName];
+                }
             }
+            else {
+                fileNames = [defaultFileName];
+            }
+
             loadAndParseFiles(fileNames, settings);
         });
 
