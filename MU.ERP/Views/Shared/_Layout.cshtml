@@ -9,7 +9,9 @@
     <link href="~/Content/Site.css" rel="stylesheet" />
     @RenderSection("head", required: false)
 
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/vue", "~/bundles/element")
+    
 </head>
 <body>
     <div id="mainbody">
@@ -25,16 +27,15 @@
         </el-container>
     </div>
     <script>
-        window.onload = function () {
+        $(function () {
             new Vue({
                 el: '#mainbody',
                 data: {
                     visible: false
                 }
             });
-        }
+        });
     </script>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>

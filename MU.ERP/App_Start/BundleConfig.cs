@@ -11,7 +11,8 @@ namespace MU.ERP
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/vue").Include(
-                        "~/Scripts/vue.js"));
+                        "~/Scripts/vue.js",
+                        "~/Scripts/axios.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/element").Include(
                         "~/Content/element-ui/lib/index.js"));
