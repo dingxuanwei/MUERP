@@ -315,6 +315,7 @@
     <Content Include="Content\images\tree\Tree_Vert.gif" />
     <Content Include="Content\images\zip.gif" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Home.html" />
     <Content Include="Scripts\axios.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
