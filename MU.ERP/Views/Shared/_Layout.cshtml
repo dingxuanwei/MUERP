@@ -1,57 +1,41 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 上海秒优</title>
-    @Styles.Render("~/Content/easyuicss")
-    <link href="~/Content/fontawesome/css/animation.css" rel="stylesheet" />
-    <link href="~/Content/fontawesome/css/fontello.css" rel="stylesheet" />
+    <title>@ViewBag.Title - 上海秒优供应链</title>
+    @Styles.Render("~/Content/elementui")
     <link href="~/Content/Site.css" rel="stylesheet" />
     @RenderSection("head", required: false)
-</head>
-<body class="easyui-layout">
-    <div data-options="region:'north'" style="height:45px;" class="head-north" border="false">
-        <span class="head-left" style="color:white;font-size:20px;">
-            供应链管理系统
-        </span>
-        <div class="easyui-panel head-right">
-            <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-cog'">设置</a>
-            <a href="/Login/LogOut" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-logout'">安全退出</a>
-        </div>
-        <div id="mm1" style="width:100px;">
-            <div data-options="iconCls:'icon-globe'">
-                <span>语言</span>
-                <div>
-                    <div data-options="iconCls:'icon-language'" onclick="SelectLanguage('zh_CN');">中文</div>
-                    <div data-options="iconCls:'icon-globe'" onclick="SelectLanguage('en');">英文</div>
-                    <div data-options="iconCls:'icon-th'" onclick="SelectLanguage('zh_TW');">繁体</div>
-                </div>
-            </div>
-            <div data-options="iconCls:'icon-edit'" onclick="ModifyPwd();">修改密码</div>
-        </div>
-    </div>
-    <div data-options="region:'south',split:true" style="height:30px;background-color:#D2E0F2;">
-        <div class="footer">Copyright © 2015-@DateTime.Today.Year 上海秒优供应链管理有限公司, All Rights Reserved</div>
-    </div>
-    <div data-options="region:'west',split:true" title="导航菜单" style="width:175px;">
-        @Html.Partial("_Menu")
-    </div>
-    <div data-options="region:'center'">
-        <noscript>
-            <div class="noscript">
-                <img src="/Content/images/noscript.gif" alt="抱歉，请开启脚本支持！" />
-            </div>
-        </noscript>
-        @RenderBody()
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/easyui")
-    <script src="~/Scripts/jquery.cookie.js"></script>
+    @Scripts.Render("~/bundles/vue", "~/bundles/element")
+    
+</head>
+<body>
+    <div id="mainbody">
+        <el-container>
+            <el-aside width="200px">Aside</el-aside>
+            <el-container>
+                <el-header>Header</el-header>
+                <el-main>
+                    @RenderBody()
+                </el-main>
+                <el-footer>Footer</el-footer>
+            </el-container>
+        </el-container>
+    </div>
+    <script>
+        $(function () {
+            new Vue({
+                el: '#mainbody',
+                data: {
+                    visible: false
+                }
+            });
+        });
+    </script>
     @RenderSection("scripts", required: false)
-    <script src="~/Content/i18n/jquery.i18n.properties.js"></script>
-    <script src="~/Scripts/layout.js"></script>
 </body>
 </html>

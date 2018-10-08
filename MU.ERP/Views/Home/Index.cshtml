@@ -1,16 +1,9 @@
 ﻿@{
     ViewBag.Title = "首页";
 }
-@model MU.DBWapper.Models.sys_user
 
-<input type="text" data-i18n-Placeholder="displayMessage" value="" />
+<el-button v-on:click="visible=true" type="primary">Button</el-button>
+<el-dialog :visible.sync="visible" title="Hello World">
+    <p>Try this UI by dingxuanwei</p>
+</el-dialog>
 
-<ul>
-    <li>@Model.UserName</li>
-</ul>
-
-@section scripts{
-<script>
-    
-</script>
-}
