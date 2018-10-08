@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MU.ERP.Models;
+using Qiniu.Util;
+using Qiniu.Storage;
 
 namespace MU.ERP.Controllers
 {
@@ -11,6 +13,7 @@ namespace MU.ERP.Controllers
     {
         public ActionResult Index()
         {
+            
             return View(Loginer);
         }
     }
