@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
     <title>Home</title>
 	<meta charset="utf-8" />
     <link href="/Content/element-ui/lib/theme-chalk/index.css" rel="stylesheet"/>
@@ -14,22 +15,28 @@
 </head>
 <body>
     <div id="app">
-        {{result}}
+        {{products}}
     </div>
     
     <script>
-        new Vue({
+        var app = new Vue({
             el: '#app',
             data: {
-                result:"Hello Dingxw!"
+                products:""
             },
             methods: {
-                Test: function () {
-                    this.$message("Testing...");
+                InitData: function (d) {
+                    this.products = d;
                 }
             },
             created: function () {
-                this.Test();
+                var _this = this;
+                axios.get("https://api.myjson.com/bins/74l63")
+                .then((res) => {
+                    _this.InitData(JSON.stringify(res.data.products));
+                    //return Promise.resolve(res.data);
+                });
+                //this.Test();
             }
         });
     </script>
