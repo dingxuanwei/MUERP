@@ -2,8 +2,7 @@
     ViewBag.Title = "首页";
 }
 
-<el-button v-on:click="visible=true" type="primary">Button</el-button>
+<el-button v-on:click="visible=true" type="@ViewBag.Type">Button</el-button>
 <el-dialog :visible.sync="visible" title="Hello World">
     <p>Try this UI by dingxuanwei</p>
 </el-dialog>
-

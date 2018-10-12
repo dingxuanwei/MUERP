@@ -13,7 +13,7 @@ namespace MU.ERP.Controllers
     {
         public ActionResult Index()
         {
-            
+            ViewBag.Type = "info";
             return View(Loginer);
         }
     }
