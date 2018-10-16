@@ -25,9 +25,9 @@ namespace WebClientTool.Controllers
                 AntiAuditReason = "反审核理由，会显示到首页上",                              //会显示到首页的通知事项中，以时间+反审理由的形式
                 Notice = new List<string>() { "test2" },                                //通知人UserCode，可多人
                 Applicant = "test1",                                                    //申请人UserCode
-                MenuCode = "2107",                                                      //菜单编号，用于获取跳转的菜单Url，如2107为采购反审
+                Url = "/Pms/Demand?id=8f0615edcd3f47348f9f16c872a2a2d4",                //用于获取跳转的菜单Url,包括查询参数，长度500个字符
                 SubmitTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),              //当前提交时间
-                OrderNo = "8f0615edcd3f47348f9f16c872a2a2d4"                            //大货订单号，用于反审链接的查询参数
+                DisplayName = "DisplayMaterialRequirement"                               //多语言系统的名称，如：DisplayMaterialRequirement
             };
 
             string content = Newtonsoft.Json.JsonConvert.SerializeObject(ctx);
