@@ -10,6 +10,18 @@ namespace EFConsole
     {
         static void Main(string[] args)
         {
+            //dynamic list = new List<dynamic> {
+            //    new { Name="develop",Age=28},
+            //    new { Name="shishi",Age=25}
+            //};
+
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i].Name);
+            //}
+
+
+
             //var s = DB.Entity().v_sys_menu.SelectMany(p => p.Code == "10");
 
             //var list = DB.SelectPage<v_sys_menu, int>(1, 10, s => s.Seq.Value, m => m.Code == "10");
