@@ -5,7 +5,6 @@ namespace MU.ERP.Portal
 {
     public class BundleConfig
     {
-        // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -16,7 +15,8 @@ namespace MU.ERP.Portal
                         "~/Scripts/axios.js",
                         "~/Scripts/ElementUI/element-ui.js"));
 
-            bundles.Add(new StyleBundle("~/Content/ElementUI").Include(
+            bundles.Add(new StyleBundle("~/Content/Element").Include(
+                      "~/Content/reset.css",
                       "~/Content/ElementUI/element-ui.css",
                       "~/Content/site.css"));
         }
