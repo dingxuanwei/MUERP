@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@section head{
+    <style>
+    .transition-box {
+        margin-bottom: 10px;
+        width: 200px;
+        height: 100px;
+        border-radius: 4px;
+        background-color: #409EFF;
+        text-align: center;
+        color: #fff;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        margin-right: 20px;
+      }
+    </style>
+}
+
+<div id="app">
+    <template>
+        <el-button v-on:click="show=!show" type="primary">Click Me</el-button>
+
+        <div style="display:flex;margin-top:20px;height:100px;">
+            <transition name="el-zoom-in-center">
+                <div v-show="show" class="transition-box">.el-fade-in-linear</div>
+            </transition>
+            <transition name="el-fade-in">
+                <div v-show="show" class="transition-box">.el-fade-in</div>
+            </transition>
+        </div>
+    </template>
+</div>
+
+@section scripts{
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    });
+</script>
+}

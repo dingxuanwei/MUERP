@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 秒优ERP</title>
+    @Styles.Render("~/Content/ElementUI")
+    @RenderSection("head", required: false)
+</head>
+<body>
+    @RenderBody()
+    @Scripts.Render("~/bundles/vue")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
