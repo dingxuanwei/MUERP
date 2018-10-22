@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClientTool", "WebClientT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetWorkSpeedMonitor", "NetWorkSpeedMonitor\NetWorkSpeedMonitor.csproj", "{C621CB9E-27F9-4474-BA26-71087B3906A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MU.VerificationCode", "VerificationCode\MU.VerificationCode.csproj", "{4017AB0C-8F3F-48B3-AE48-B239E400F642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{C621CB9E-27F9-4474-BA26-71087B3906A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C621CB9E-27F9-4474-BA26-71087B3906A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C621CB9E-27F9-4474-BA26-71087B3906A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4017AB0C-8F3F-48B3-AE48-B239E400F642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4017AB0C-8F3F-48B3-AE48-B239E400F642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4017AB0C-8F3F-48B3-AE48-B239E400F642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4017AB0C-8F3F-48B3-AE48-B239E400F642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,5 +125,6 @@ Global
 		{0F3F9496-9328-45C5-823C-A7FA9A88D747} = {5AD65428-C5F6-41EA-8ACD-BF3E57F0DFD0}
 		{427F6B73-C8E4-40D7-BB38-D376121F55BA} = {8F50F0F0-5DC3-4813-ADA9-A7522A8449FC}
 		{C621CB9E-27F9-4474-BA26-71087B3906A5} = {8F50F0F0-5DC3-4813-ADA9-A7522A8449FC}
+		{4017AB0C-8F3F-48B3-AE48-B239E400F642} = {86E84B25-B233-400F-A629-6FE061F2AD06}
 	EndGlobalSection
 EndGlobal

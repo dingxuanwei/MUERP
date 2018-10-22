@@ -9,6 +9,7 @@ using MU.DAL;
 using MU.DBWapper.Models;
 using MU.Extensions;
 using MU.DAL.Sys;
+using MU.VerificationCode;
 
 namespace MU.ERP.Controllers
 {
@@ -21,6 +22,39 @@ namespace MU.ERP.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return PartialView();
         }
+
+        public virtual ActionResult VerifyImage()
+        {
+            var validateCodeType = new ValidateCode_Style4();
+            string code = "6666";
+            byte[] bytes = validateCodeType.CreateImage(out code);
+            return File(bytes, @"image/jpeg");
+        }
+
+
+        public ActionResult VerifyCode()
+        {
+            Dictionary<string, string> responseData = new Dictionary<string, string>();
+
+            string Vcode = Request["Vcode"];
+            string strValidateCodeGuid = "";
+
+            
+
+            //if (!string.IsNullOrEmpty(strValidateCodeGuid))
+            //{
+            //    rf = uf.GetValidateCode(strValidateCodeGuid);
+            //    if (rf.RState == 0)
+            //    {
+
+            //        responseData.Add("Code", rf.RCode);
+            //    }
+
+            //}
+
+            return Json(responseData);
+        }
+
 
         /// <summary>
         /// 测试数据库连接是否正常

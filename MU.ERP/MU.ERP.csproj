@@ -432,6 +432,10 @@
       <Project>{9f602b1e-0a48-4ac6-a39c-ef0be1b64b38}</Project>
       <Name>MU.DBWapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VerificationCode\MU.VerificationCode.csproj">
+      <Project>{4017ab0c-8f3f-48b3-ae48-b239e400f642}</Project>
+      <Name>MU.VerificationCode</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
