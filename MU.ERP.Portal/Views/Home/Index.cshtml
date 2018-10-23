@@ -4,6 +4,9 @@
 
 @section head{
 <style>
+body, html, #app {
+    height:100%;
+}
 .el-header {
     background-color:#252a2f;
     color: #fff;
@@ -12,11 +15,17 @@
   }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
 width: 230px;
-min-height: 1600px;
+height: 100%;
 }
 .el-menu-first {
     border-top:1px solid #3B3E3F;
     border-bottom:1px solid #3B3E3F;
+}
+.el-container,.el-aside {
+    height:100%;
+}
+.el-aside {
+    background-color:#252a2f;
 }
 </style>
 }
@@ -30,6 +39,7 @@ min-height: 1600px;
                      background-color="#252a2f"
                      text-color="#fff"
                      active-text-color="#ffd04b">
+                <el-menu-item index="0" style="width:210px;">秒优供应链</el-menu-item>
                 <el-menu-item index="1">处理中心</el-menu-item>
                 <el-submenu index="2">
                     <template slot="title">
@@ -47,7 +57,7 @@ min-height: 1600px;
                         <el-menu-item index="2-4-3">选项3</el-menu-item>
                     </el-submenu>
                 </el-submenu>
-                <el-menu-item index="3" disabled>消息中心</el-menu-item>
+                <el-menu-item index="3">消息中心</el-menu-item>
                 <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
             </el-menu>
         </el-header>
@@ -100,12 +110,7 @@ min-height: 1600px;
                 </el-menu>
             </el-aside>
             <el-main>
-                <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-                    <el-radio-button label="false">展开</el-radio-button>
-                    <el-radio-button label="true">收起</el-radio-button>
-                </el-radio-group>
-
-                
+                <h1>This is main page...</h1>
             </el-main>
         </el-container>
     </el-container>

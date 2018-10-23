@@ -1,1 +1,29 @@
-﻿
+﻿/*body,html {
+    height:100%;
+    color:aquamarine;
+}
+.container {
+    background-color:cornsilk;
+}
+
+#top {
+    background-color:#252a2f;
+    position:absolute;
+    top:0;
+    height:50px;
+    width:100%;
+}
+#left {
+    background-color:#252a2f;
+    position:absolute;
+    left:0;
+    top:50px;
+    width:230px;
+    height:calc(100% - 51px);
+    border-top:1px solid #3B3E3F;
+}
+#main {
+    position:absolute;
+    left:230px;
+    top:51px;
+}*/
