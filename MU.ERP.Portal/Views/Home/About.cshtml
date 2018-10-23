@@ -1,8 +1,51 @@
 ﻿
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Test";
 }
+<style>
+    .el-input {
+        width:280px;
+    }
+</style>
+<div id="app" style="padding:20px;">
+    <template>
+        <el-input placeholder="请输入内容" v-model="input">
+            <template slot="prepend">Https://</template>
+        </el-input>
+        {{count}}
+    </template>
+</div>
+@section scripts{
+<script>
+    const moduleA = {
+        state: { count: 50 },
+        mutations: {},
+        actions: {},
+        getters: {}
+    };
+    const moduleB = {
+        state: { count: 100 },
+        mutations: {},
+        actions: {},
+        getters: {}
+    };
 
-<header style="background-color:antiquewhite;height:50px;line-height:50px;">
-    <span>头部</span>
-</header>
+    const store = new Vuex.Store({
+        modules: {
+            a: moduleA,
+            b: moduleB
+        }
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            input: 'www.dingxuanwei.com',
+            count: store.state.b.count
+        },
+        methods: {
+            incr() { store.commit('increment') }
+        }
+    });
+</script>
+}
