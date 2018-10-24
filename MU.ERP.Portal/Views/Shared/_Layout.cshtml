@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 秒优ERP</title>
     @Styles.Render("~/Content/Element")
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"/>
     @RenderSection("head", required: false)
 </head>
 <body>
     @RenderBody()
     @Scripts.Render("~/bundles/vue")
-    <script src="~/Scripts/vuex.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>

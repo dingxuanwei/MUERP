@@ -12,12 +12,12 @@ namespace MU.ERP.Portal
 
             bundles.Add(new ScriptBundle("~/bundles/vue").Include(
                         "~/Scripts/vue.js",
-                        "~/Scripts/axios.js",
-                        "~/Scripts/ElementUI/element-ui.js"));
+                        "~/Scripts/axios.js"));
+                        //"~/Scripts/ElementUI/element-ui.js"));
 
             bundles.Add(new StyleBundle("~/Content/Element").Include(
                       "~/Content/reset.css",
-                      "~/Content/ElementUI/element-ui.css",
+                      //"~/Content/ElementUI/element-ui.css",
                       "~/Content/site.css"));
         }
     }
