@@ -10,17 +10,11 @@ namespace EFConsole
     {
         static void Main(string[] args)
         {
-            //dynamic list = new List<dynamic> {
-            //    new { Name="develop",Age=28},
-            //    new { Name="shishi",Age=25}
-            //};
-
-            //for (int i = 0; i < list.Count; i++)
-            //{
-            //    Console.WriteLine(list[i].Name);
-            //}
-
-
+            var list = DB.Select<sys_user>(p => p.UserCode == "admin");
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.Password);
+            }
 
             //var s = DB.Entity().v_sys_menu.SelectMany(p => p.Code == "10");
 
@@ -45,7 +39,7 @@ namespace EFConsole
             //var list = db.sys_user.Where(p => (p.UserCode == usercode || p.Phone == usercode || p.Email == usercode) && p.Password == "7FEF6171469E80D32C0559F88B377245").ToList();
             //if (list.Count() == 0) { Console.WriteLine("用户名或密码不存在"); return; }
             //var user = list.FirstOrDefault();
-            //if (!user.Enable) { Console.WriteLine("该用户已经被禁用，请联系管理员");return; }
+            //if (!user.Enable) { Console.WriteLine("该用户已经被禁用，请联系管理员"); return; }
 
             //Console.WriteLine("登录成功");
             Console.ReadLine();

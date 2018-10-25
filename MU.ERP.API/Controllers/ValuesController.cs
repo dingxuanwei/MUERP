@@ -35,5 +35,10 @@ namespace MU.ERP.API.Controllers
         public void Delete(int id)
         {
         }
+
+        public string SModel(string name)
+        {
+            return "Hello," + name;
+        }
     }
 }
