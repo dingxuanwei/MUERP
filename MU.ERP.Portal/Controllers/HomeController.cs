@@ -21,6 +21,11 @@ namespace MU.ERP.Portal.Controllers
             return View();
         }
 
+        public ActionResult EleTag()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ActionResult ImportExcel()
         {

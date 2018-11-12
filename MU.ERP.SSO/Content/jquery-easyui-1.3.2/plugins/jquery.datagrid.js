@@ -946,10 +946,16 @@
         _af.onLoadSuccess.call(_ac, _ad);
         var _b1 = $(_ac).datagrid("getPager");
         if (_b1.length) {
-            if (_b1.pagination("options").total != _ad.total) {
+            var _c1 = _b1.pagination("options");
+            if (_c1.total != _ad.total) {
+                if (_c1.total == 0) _c1.pageNumber = 1;
                 _b1.pagination("refresh", {
                     total: _ad.total
                 });
+                if (_af.pageNumber != _c1.pageNumber && _c1.pageNumber > 0) {
+                    _af.pageNumber = _c1.pageNumber;
+                    _150(_ac);
+                }
             }
         }
         _1e(_ac);
@@ -1498,23 +1504,13 @@
         },
         0);
         function _154() {
-            var _155 = opts.loader.call(_151, _153,
-            function (data) {
-                setTimeout(function () {
-                    $(_151).datagrid("loaded");
-                },
-                0);
+            var _155 = opts.loader.call(_151, _153, function (data) {
+                setTimeout(function () { $(_151).datagrid("loaded"); }, 0);
                 _ab(_151, data);
-                setTimeout(function () {
-                    _13c(_151);
-                },
-                0);
+                setTimeout(function () { _13c(_151); }, 0);
             },
             function () {
-                setTimeout(function () {
-                    $(_151).datagrid("loaded");
-                },
-                0);
+                setTimeout(function () { $(_151).datagrid("loaded"); }, 0);
                 opts.onLoadError.apply(_151, arguments);
             });
             if (_155 == false) {
