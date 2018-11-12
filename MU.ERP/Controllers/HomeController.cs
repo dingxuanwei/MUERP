@@ -16,5 +16,7 @@ namespace MU.ERP.Controllers
             ViewBag.Type = "info";
             return View(Loginer);
         }
+
+        
     }
 }

@@ -8,6 +8,7 @@ using MU.DBWapper;
 using log4net;
 using System.Diagnostics;
 using CSRedis;
+using System.Web.Mvc;
 
 namespace ConsoleApp
 {
@@ -15,14 +16,27 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            using (var redis = new RedisClient("localhost"))
-            {
-                redis.Connected += (s, e) => { Console.WriteLine("Connected"); };
-
-                var b = redis.SMembers("bbs");
-                Array.ForEach(b, (s) => { Console.WriteLine(s); });
-            }
+            var result = GetUserExcept(new string[] { "a", "b", "c", "d" });
+            Console.WriteLine(result);
+            
             Console.ReadLine();
+        }
+
+        static string GetUserExcept(params string[] users)
+        {
+            
+
+            return string.Join(",", users);
+        }
+    }
+
+    class Tot
+    {
+        public string MyProperty { get; set; }
+
+        public Tot()
+        {
+
         }
     }
 }

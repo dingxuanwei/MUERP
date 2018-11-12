@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.Version = "1.3.2";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>easyui @ViewBag.Version test</title>
+    <link href="~/Content/jquery-easyui-@ViewBag.Version/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-@ViewBag.Version/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/jquery-easyui-@ViewBag.Version/jquery-1.8.0.min.js"></script>
+
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Content/jquery-easyui-@ViewBag.Version/easyloader.js"></script>
+</head>
+<body>
+    <h2>DataGrid with Toolbar</h2>
+    <p>Put buttons on top toolbar of DataGrid.</p>
+    <div style="margin:20px 0;"></div>
+    <table class="easyui-datagrid" id="dg" title="DataGrid with Toolbar" style="width:700px;height:500px;"
+           data-options="rownumbers:true,singleSelect:true,url:'datagrid_data',method:'get',toolbar:toolbar,pagination:true">
+        <thead>
+            <tr>
+                <th data-options="field:'ItemID',width:80">Item ID</th>
+                <th data-options="field:'Product',width:100">Product</th>
+                <th data-options="field:'Price',width:80,align:'right'">List Price</th>
+                <th data-options="field:'UnitCost',width:80,align:'right'">Unit Cost</th>
+                <th data-options="field:'Attribute',width:240">Attribute</th>
+                <th data-options="field:'Status',width:60,align:'center'">Status</th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript">
+		var toolbar = [{
+			text:'Add',
+			iconCls:'icon-add',
+			handler: function () {
+			    $('#dg').datagrid({
+			        queryParams: {
+			            ItemID: 'EST'
+			        }
+			    });
+			}
+		},{
+			text:'Cut',
+			iconCls:'icon-cut',
+			handler: function () {
+			    $('#dg').datagrid({
+			        queryParams: {
+			            ItemID: 'BEST'
+			        }
+			    });
+			}
+		},'-',{
+			text:'Save',
+			iconCls:'icon-save',
+			handler: function () {
+			    $('#dg').datagrid({
+			        queryParams: {
+			            ItemID: '5'
+			        }
+			    });
+			}
+		}];
+    </script>
+</body>
+</html>
