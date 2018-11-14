@@ -68,5 +68,3 @@ if ($.fn.datetimebox && $.fn.datebox){
 		missingMessage: $.fn.datebox.defaults.missingMessage
 	});
 }
-
-easyuifix.lang_zh_CN();

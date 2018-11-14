@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading.Tasks;
 
 namespace MU.ERP.SSO.Controllers
 {
@@ -56,9 +57,13 @@ namespace MU.ERP.SSO.Controllers
 
         }
 
-        public ActionResult Contact()
+        public async Task<ActionResult> Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            var message = await Task.Delay(3000).
+                ContinueWith((t)=> {
+                    return "Your contact page.";
+                });
+            ViewBag.Message = message;
 
             return View();
         }

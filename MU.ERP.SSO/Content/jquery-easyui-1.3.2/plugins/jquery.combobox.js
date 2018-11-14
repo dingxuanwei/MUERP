@@ -340,7 +340,7 @@
                 $(this).combobox("setValues", _51);
                 $(this).combobox("hidePanel");
             }, query: function (q) {
-                console.log('1.3.2 combobox ' + q);
+                //console.log('1.3.2 combobox ' + q);
                 _3b(this, q);
             }
         }, filter: function (q, row) {

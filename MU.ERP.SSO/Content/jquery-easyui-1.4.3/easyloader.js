@@ -183,7 +183,7 @@
     window.using = easyloader.load;
     if (window.jQuery) {
         jQuery(function () {
-            console.log('1.4.3 jquery easyloader');
+            //console.log('1.4.3 jquery easyloader');
             easyloader.load("parser", function () {
                 jQuery.parser.parse();
             });

@@ -30,9 +30,15 @@
         var _9 = _4.hasDownArrow ? _8._outerWidth() : 0;
         _5._outerWidth(_4.width)._outerHeight(_4.height);
         _7._outerWidth(_5.width() - _9);
-        _7.css({ height: _5.height() + "px", lineHeight: _5.height() + "px" });
+        _7.css({
+            height: _5.height() + "px",
+            lineHeight: _5.height() + "px"
+        });
         _8._outerHeight(_5.height());
-        _6.panel("resize", { width: (_4.panelWidth ? _4.panelWidth : _5.outerWidth()), height: _4.panelHeight });
+        _6.panel("resize", {
+            width: (_4.panelWidth ? _4.panelWidth : _5.outerWidth()),
+            height: _4.panelHeight
+        });
         _5.insertAfter(_2);
     };
     function _a(_b) {
@@ -52,7 +58,14 @@
         $("<input type=\"hidden\" class=\"combo-value\">").appendTo(_10);
         var _12 = $("<div class=\"combo-panel\"></div>").appendTo("body");
         _12.panel({
-            doSize: false, closed: true, cls: "combo-p", style: { position: "absolute", zIndex: 10 }, onOpen: function () {
+            doSize: false,
+            closed: true,
+            cls: "combo-p",
+            style: {
+                position: "absolute",
+                zIndex: 10
+            },
+            onOpen: function () {
                 $(this).panel("resize");
             }
         });
@@ -62,7 +75,10 @@
             $(_f).removeAttr("name").attr("comboName", _13);
         }
         _11.attr("autocomplete", "off");
-        return { combo: _10, panel: _12 };
+        return {
+            combo: _10,
+            panel: _12
+        };
     };
     function _14(_15) {
         var _16 = $.data(_15, "combo").combo.find("input.combo-text");
@@ -78,7 +94,8 @@
         var _1c = $.data(_18, "combo").panel;
         var _1d = _1b.find(".combo-text");
         var _1e = _1b.find(".combo-arrow");
-        $(document).unbind(".combo").bind("mousedown.combo", function (e) {
+        $(document).unbind(".combo").bind("mousedown.combo",
+        function (e) {
             var p = $(e.target).closest("span.combo,div.combo-panel");
             if (p.length) {
                 return;
@@ -91,10 +108,12 @@
         _1d.unbind(".combo");
         _1e.unbind(".combo");
         if (!_1a.disabled) {
-            _1d.bind("mousedown.combo", function (e) {
+            _1d.bind("mousedown.combo",
+            function (e) {
                 $("div.combo-panel").not(_1c).panel("close");
                 e.stopPropagation();
-            }).bind("keydown.combo", function (e) {
+            }).bind("keydown.combo",
+            function (e) {
                 switch (e.keyCode) {
                     case 38:
                         _1a.keyHandler.up.call(_18);
@@ -116,12 +135,12 @@
                                 clearTimeout(_19.timer);
                             }
                             _19.timer = setTimeout(function () {
-                                console.error('setTimeout');
+                                //console.error('setTimeout');
                                 var q = _1d.val();
                                 if (_19.previousValue != q) {
                                     _19.previousValue = q;
 
-                                    console.error(_1a.editNotShowPanel);
+                                    //console.error(_1a.editNotShowPanel);
                                     if (!_1a.editNotShowPanel) {
                                         $(_18).combo("showPanel");
                                     }
@@ -129,11 +148,13 @@
                                     _1a.keyHandler.query.call(_18, _1d.val());
                                     _2c(_18, true);
                                 }
-                            }, _1a.delay);
+                            },
+                            _1a.delay);
                         }
                 }
             });
-            _1e.bind("click.combo", function () {
+            _1e.bind("click.combo",
+            function () {
                 if (_1c.is(":visible")) {
                     _28(_18);
                 } else {
@@ -141,12 +162,14 @@
                     $(_18).combo("showPanel");
                 }
                 _1d.focus();
-            }).bind("mouseenter.combo", function () {
+            }).bind("mouseenter.combo",
+            function () {
                 $(this).addClass("combo-arrow-hover");
-            }).bind("mouseleave.combo", function () {
+            }).bind("mouseleave.combo",
+            function () {
                 $(this).removeClass("combo-arrow-hover");
-            }).bind("mousedown.combo", function () {
-            });
+            }).bind("mousedown.combo",
+            function () { });
         }
     };
     function _20(_21) {
@@ -156,14 +179,19 @@
         if ($.fn.window) {
             _24.panel("panel").css("z-index", $.fn.window.defaults.zIndex++);
         }
-        _24.panel("move", { left: _23.offset().left, top: _25() });
+        _24.panel("move", {
+            left: _23.offset().left,
+            top: _25()
+        });
         if (_24.panel("options").closed) {
             _24.panel("open");
             _22.onShowPanel.call(_21);
-        }
-        (function () {
+        } (function () {
             if (_24.is(":visible")) {
-                _24.panel("move", { left: _26(), top: _25() });
+                _24.panel("move", {
+                    left: _26(),
+                    top: _25()
+                });
                 setTimeout(arguments.callee, 200);
             }
         })();
@@ -203,20 +231,20 @@
         }
     };
     function _31(_32, _33) {
-        //var _34=$.data(_32,"combo").options;
-        //var _35=$.data(_32,"combo").combo;
-        //if(_33){
-        //_34.disabled=true;
-        //$(_32).attr("disabled",true);
-        //_35.find(".combo-value").attr("disabled",true);
-        //_35.find(".combo-text").attr("disabled",true);
-        //}else{
-        //_34.disabled=false;
-        //$(_32).removeAttr("disabled");
-        //_35.find(".combo-value").removeAttr("disabled");
-        //_35.find(".combo-text").removeAttr("disabled");
-        //}
-        easyuifix.combo_disableToReadonly(_32, _33);
+        var _34 = $.data(_32, "combo").options;
+        var _35 = $.data(_32, "combo").combo;
+        if (_33) {
+            _34.disabled = true;
+            $(_32).attr("disabled", true);
+            _35.find(".combo-value").attr("disabled", true);
+            _35.find(".combo-text").attr("disabled", true);
+        } else {
+            _34.disabled = false;
+            $(_32).removeAttr("disabled");
+            _35.find(".combo-value").removeAttr("disabled");
+            _35.find(".combo-text").removeAttr("disabled");
+        }
+        //easyuifix.combo_disableToReadonly(_32, _33);
     };
     function _36(_37) {
         var _38 = $.data(_37, "combo").options;
@@ -241,6 +269,7 @@
     function _41(_42) {
         var _43 = [];
         var _44 = $.data(_42, "combo").combo;
+        console.log($.data(_42, "combo"));
         _44.find("input.combo-value").each(function () {
             _43.push($(this).val());
         });
@@ -291,8 +320,7 @@
     function _53(_54) {
         var _55 = $.data(_54, "combo").options;
         var fn = _55.onChange;
-        _55.onChange = function () {
-        };
+        _55.onChange = function () { };
         if (_55.multiple) {
             if (_55.value) {
                 if (typeof _55.value == "object") {
@@ -321,7 +349,13 @@
                 $.extend(_58.options, _56);
             } else {
                 var r = _e(this);
-                _58 = $.data(this, "combo", { options: $.extend({}, $.fn.combo.defaults, $.fn.combo.parseOptions(this), _56), combo: r.combo, panel: r.panel, previousValue: null });
+                _58 = $.data(this, "combo", {
+                    options: $.extend({},
+                    $.fn.combo.defaults, $.fn.combo.parseOptions(this), _56),
+                    combo: r.combo,
+                    panel: r.panel,
+                    previousValue: null
+                });
                 $(this).removeAttr("disabled");
             }
             $("input.combo-text", _58.combo).attr("readonly", !_58.options.editable);
@@ -336,48 +370,60 @@
     $.fn.combo.methods = {
         options: function (jq) {
             return $.data(jq[0], "combo").options;
-        }, panel: function (jq) {
+        },
+        panel: function (jq) {
             return $.data(jq[0], "combo").panel;
-        }, textbox: function (jq) {
+        },
+        textbox: function (jq) {
             return $.data(jq[0], "combo").combo.find("input.combo-text");
-        }, destroy: function (jq) {
+        },
+        destroy: function (jq) {
             return jq.each(function () {
                 _14(this);
             });
-        }, resize: function (jq, _59) {
+        },
+        resize: function (jq, _59) {
             return jq.each(function () {
                 _1(this, _59);
             });
-        }, showPanel: function (jq) {
+        },
+        showPanel: function (jq) {
             return jq.each(function () {
                 _20(this);
             });
-        }, hidePanel: function (jq) {
+        },
+        hidePanel: function (jq) {
             return jq.each(function () {
                 _28(this);
             });
-        }, disable: function (jq) {
+        },
+        disable: function (jq) {
             return jq.each(function () {
                 _31(this, true);
                 _17(this);
             });
-        }, enable: function (jq) {
+        },
+        enable: function (jq) {
             return jq.each(function () {
                 _31(this, false);
                 _17(this);
             });
-        }, validate: function (jq) {
+        },
+        validate: function (jq) {
             return jq.each(function () {
                 _2c(this, true);
             });
-        }, isValid: function (jq) {
+        },
+        isValid: function (jq) {
             var _5a = $.data(jq[0], "combo").combo.find("input.combo-text");
             return _5a.validatebox("isValid");
-        }, clear: function (jq) {
+        },
+        clear: function (jq) {
             return jq.each(function () {
                 _36(this);
             });
-        }, reset: function (jq) {
+        },
+        reset: function (jq) {
             return jq.each(function () {
                 var _5b = $.data(this, "combo").options;
                 if (_5b.multiple) {
@@ -386,21 +432,27 @@
                     $(this).combo("setValue", _5b.originalValue);
                 }
             });
-        }, getText: function (jq) {
+        },
+        getText: function (jq) {
             return _3a(jq[0]);
-        }, setText: function (jq, _5c) {
+        },
+        setText: function (jq, _5c) {
             return jq.each(function () {
                 _3d(this, _5c);
             });
-        }, getValues: function (jq) {
+        },
+        getValues: function (jq) {
             return _41(jq[0]);
-        }, setValues: function (jq, _5d) {
+        },
+        setValues: function (jq, _5d) {
             return jq.each(function () {
                 _45(this, _5d);
             });
-        }, getValue: function (jq) {
+        },
+        getValue: function (jq) {
             return _4d(jq[0]);
-        }, setValue: function (jq, _5e) {
+        },
+        setValue: function (jq, _5e) {
             return jq.each(function () {
                 _50(this, _5e);
             });
@@ -408,19 +460,43 @@
     };
     $.fn.combo.parseOptions = function (_5f) {
         var t = $(_5f);
-        return $.extend({}, $.fn.validatebox.parseOptions(_5f), $.parser.parseOptions(_5f, ["width", "height", "separator", { panelWidth: "number", editable: "boolean", hasDownArrow: "boolean", delay: "number" }]), { panelHeight: (t.attr("panelHeight") == "auto" ? "auto" : parseInt(t.attr("panelHeight")) || undefined), multiple: (t.attr("multiple") ? true : undefined), disabled: (t.attr("disabled") ? true : undefined), value: (t.val() || undefined) });
+        return $.extend({},
+        $.fn.validatebox.parseOptions(_5f), $.parser.parseOptions(_5f, ["width", "height", "separator", {
+            panelWidth: "number",
+            editable: "boolean",
+            hasDownArrow: "boolean",
+            delay: "number"
+        }]), {
+            panelHeight: (t.attr("panelHeight") == "auto" ? "auto" : parseInt(t.attr("panelHeight")) || undefined),
+            multiple: (t.attr("multiple") ? true : undefined),
+            disabled: (t.attr("disabled") ? true : undefined),
+            value: (t.val() || undefined)
+        });
     };
     $.fn.combo.defaults = $.extend({}, $.fn.validatebox.defaults, {
-        width: "auto", height: 22, panelWidth: null, panelHeight: 200, multiple: false, separator: ",", editable: true, disabled: false, hasDownArrow: true, value: "", delay: 200, keyHandler: {
-            up: function () {
-            }, down: function () {
-            }, enter: function () {
-            }, query: function (q) {
-            }
-        }, onShowPanel: function () {
-        }, onHidePanel: function () {
-        }, onChange: function (_60, _61) {
-        }
+        inputEvents: {
+            keydown: _17,
+            paste: _17
+        },
+        width: "auto",
+        height: 22,
+        panelWidth: null,
+        panelHeight: 200,
+        multiple: false,
+        separator: ",",
+        editable: true,
+        disabled: false,
+        hasDownArrow: true,
+        value: "",
+        delay: 200,
+        keyHandler: {
+            up: function () { },
+            down: function () { },
+            enter: function () { },
+            query: function (q) { }
+        },
+        onShowPanel: function () { },
+        onHidePanel: function () { },
+        onChange: function (_60, _61) { }
     });
 })(jQuery);
-

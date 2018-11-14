@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "About";
-    ViewBag.Version = "1.3.2";
+    //ViewBag.Version = "1.3.2";
+    ViewBag.Version = "1.6.3";
 }
 <!DOCTYPE html>
 <html>
@@ -8,13 +9,85 @@
     <title>easyui @ViewBag.Version test</title>
     <link href="~/Content/jquery-easyui-@ViewBag.Version/themes/default/easyui.css" rel="stylesheet" />
     <link href="~/Content/jquery-easyui-@ViewBag.Version/themes/icon.css" rel="stylesheet" />
-    <script src="~/Content/jquery-easyui-@ViewBag.Version/jquery-1.8.0.min.js"></script>
-
-    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Content/jquery-easyui-@ViewBag.Version/jquery.min.js"></script>
     <script src="~/Content/jquery-easyui-@ViewBag.Version/easyloader.js"></script>
+    <script src="~/Content/jquery-easyui-@ViewBag.Version/locale/easyui-lang-zh_CN.js"></script>
 </head>
 <body>
-    <h2>DataGrid with Toolbar</h2>
+    <h2>Basic ComboBox</h2>
+    <p>Type in ComboBox to try auto complete.</p>
+    <div style="margin:20px 0"></div>
+    
+    <select class="easyui-combobox" id="cb" name="state" style="width:200px;">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH" selected>Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+    </select>
+
+    <a href="#" class="easyui-linkbutton" onclick="GetComboText()">获取Text</a>
+    <a href="#" class="easyui-linkbutton" onclick="GetComboValue()">获取Value</a>
+    <pre id="msg"></pre>
+    <script>
+        function GetInputText() { $('#msg').text($('#ss').textbox('getText')); }
+        function GetInputValue() { $('#msg').text($('#ss').textbox('getValue')); }
+
+        var GetComboText = function () {
+            var val = $('#cb').combobox('getText');
+            $('#msg').text(val);
+        };
+        var GetComboValue = function () {
+            var val = $('#cb').combobox('getValue');
+            $('#msg').text(val);
+        };
+    </script>
+    @*<h2>DataGrid with Toolbar</h2>
     <p>Put buttons on top toolbar of DataGrid.</p>
     <div style="margin:20px 0;"></div>
     <table class="easyui-datagrid" id="dg" title="DataGrid with Toolbar" style="width:700px;height:500px;"
@@ -63,6 +136,6 @@
 			    });
 			}
 		}];
-    </script>
+    </script>*@
 </body>
 </html>
