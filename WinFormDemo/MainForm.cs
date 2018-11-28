@@ -18,31 +18,27 @@ namespace WinFormDemo
         {
             InitializeComponent();
         }
-        BackgroundWorker bg = new BackgroundWorker();
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bg.DoWork += Bg_DoWork;
-            bg.RunWorkerAsync();
+            label1.Text = "Report";
+
+            int left = label1.Left;
+            int top = label1.Top;
+            int width = label1.Width;
+            int height = label1.Height;
+            var lbl = new Label[20];
+            for (int i = 0; i < lbl.Length; i++)
+            {
+                lbl[i] = new Label();
+                lbl[i].TextAlign = ContentAlignment.TopCenter;
+                lbl[i].Text = i.ToString();
+                lbl[i].Left = left + width * ((i + 1) % 4);
+                lbl[i].Top = top + height * ((i + 1) / 4);
+                panel1.Controls.Add(lbl[i]);
+            }
+            label1.Visible = true;
         }
-
-        private void Bg_DoWork(object sender, DoWorkEventArgs e)
-        {
-            DoSomething();
-            this.Invoke(new Action(()=> {
-                textBox1.Text = "Do job Success";
-            }));
-            
-        }
-
-        private void DoSomething()
-        {
-            Task t1 = Task.Run(new Action(() => { Thread.Sleep(1000); }));
-
-            t1.ContinueWith(t => { Thread.Sleep(2000); Console.WriteLine("第二次任务"); })
-                .ContinueWith(t => { Thread.Sleep(2000); Console.WriteLine("第三次任务"); })
-                .ContinueWith(t => { Thread.Sleep(2000); Console.WriteLine("第四次任务"); });
-
-        }
+        
     }
 }
