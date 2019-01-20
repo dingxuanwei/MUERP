@@ -1,4 +1,4 @@
 ﻿#井号开头的行为注释，配置的内容为Url(请求的地址),Method（请求的方法名，默认Hanger）,Password（设置密码，默认123456）,一个配置一行
-Url=http://192.168.88.165:9008/MES/
+Url=http://192.168.1.15:9008/MES/
 Method=Hanger
 Password=123456
